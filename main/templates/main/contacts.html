@@ -1,0 +1,23 @@
+{% extends 'main/base.html' %} {% block content %} {% load static %}
+<div class="content">
+
+    <section class="contacts">
+        <div class="info-block left">
+            <h3 class="title">Контакты</h3>
+            <div class="table">
+                <span>Номер телефона</span>
+                <span>8 800 555 35 35 </span>
+                <span>E-mail</span>
+                <span>email@email.com</span>
+                <span>Адрес</span>
+                <span>Пятницкого, 10</span>
+            </div>
+        </div>
+
+        <img src="{% static 'img/abajure.png' %}" alt="">
+
+    </section>
+    <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2474.398559679527!2d39.202885315947334!3d51.670847306560034!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x413b2efd78a14d01%3A0xb44450e97701fcf8!2z0YPQuy4g0KTRgNC40LTRgNC40YXQsCDQrdC90LPQtdC70YzRgdCwLCAxOCwg0JLQvtGA0L7QvdC10LYsINCS0L7RgNC-0L3QtdC20YHQutCw0Y8g0L7QsdC7LiwgMzk0MDM2!5e0!3m2!1sru!2sru!4v1590482320729!5m2!1sru!2sru"
+        width="100%" height="400" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+</div>
+{% endblock %}

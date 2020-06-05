@@ -1,0 +1,182 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/reset.css' %}">
+
+    <script src="{% static 'js/main.js' %}" charset="utf-8"></script>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'css/components.css' %}">
+    <link rel="stylesheet" href="{% static 'css/response.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ангийский дом</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=320">
+</head>
+
+<body>
+    <div class="switch_lang">
+
+        <span id="ru" class="lang active">RU</span>
+        <span id='eng' class="lang ">ENG</span>
+    </div>
+    <header>
+        <a href="{% url 'main' %}" class="logo-link"><img class="logo" src="{% static 'img/logo.png' %}" alt=""></a>
+        <nav>
+            <div class="left-links">
+                <a href="{% url 'portfolio' %}">Наши проекты</a>
+                <a href="{% url 'events' %}">События</a>
+            </div>
+            <div class="center-links">
+                <a href="#">Мебель</a>
+                <a href="#">Кухни</a>
+                <a href="#">Свет</a>
+                <a href="#">Текстиль</a>
+                <a href="#">Аксессуары</a>
+                <a href="#">Отделка</a>
+                <input type="search">
+                <img src="{% static 'img/serch.svg' %}" alt="search" class="search">
+            </div>
+            <div class="right-links">
+                <a href="{% url 'aboutus' %}">О нас</a>
+                <a href="{% url 'contacts' %}">Контакты</a>
+            </div>
+        </nav>
+        <div class="mobile-header">
+            <a href="{% url 'main' %}" class="mobile-logo-link"><img src="{% static 'img/logo-mobile.png' %}" alt="LOGO" class="mobile-logo"></a>
+            <div class="menu">
+                <div class="hambergerIcon"></div>
+            </div>
+        </div>
+        <div class="nav-mobile">
+            <h3>Наш ассортимент</h3>
+            <ul>
+                <a href="">
+                    <li>Мебель</li>
+                </a>
+                <a href="">
+                    <li>Кухни</li>
+                </a>
+                <a href="">
+                    <li>Свет</li>
+                </a>
+                <a href="">
+                    <li>Текстиль</li>
+                </a>
+                <a href="">
+                    <li>Аксессуары</li>
+                </a>
+                <a href="">
+                    <li>Отделка</li>
+                </a>
+            </ul>
+            <h3>English House</h3>
+            <ul>
+                <a href="{% url 'portfolio' %}">
+                    <li>Наши проекты</li>
+                </a>
+                <a href="{% url 'events' %}">
+                    <li>События</li>
+                </a>
+                <a href="{% url 'contacts' %}">
+                    <li>Контакты</li>
+                </a>
+                <a href="{% url 'aboutus' %}">
+                    <li>О нас</li>
+                </a>
+            </ul>
+        </div>
+    </header>
+
+    {% block content %} {% endblock %}
+
+
+
+
+    <footer>
+        <div class="column">
+            <h3>О компании</h3>
+            <ul>
+                <a href="">
+                    <li>О нас</li>
+                </a>
+                <a href="">
+                    <li>Контакты</li>
+                </a>
+                <a href="{% url 'events' %}">
+                    <li>События</li>
+                </a>
+            </ul>
+        </div>
+        <div class="column">
+            <h3>Наш ассортимент</h3>
+            <ul>
+                <a href="">
+                    <li>Мебель</li>
+                </a>
+                <a href="">
+                    <li>Кухни</li>
+                </a>
+                <a href="">
+                    <li>Свет</li>
+                </a>
+                <a href="">
+                    <li>Текстиль</li>
+                </a>
+                <a href="">
+                    <li>Аксессуары</li>
+                </a>
+                <a href="">
+                    <li>Отделка</li>
+                </a>
+            </ul>
+
+        </div>
+        <div class="column">
+            <h3>Проекты</h3>
+            <ul>
+                <a href="">
+                    <li>Проект</li>
+                </a>
+                <a href="">
+                    <li>Проект</li>
+                </a>
+                <a href="">
+                    <li>Проект</li>
+                </a>
+                <a href="">
+                    <li>Проект</li>
+                </a>
+                <a href="">
+                    <li>Проект</li>
+                </a>
+                <a href="">
+                    <li>Проект</li>
+                </a>
+            </ul>
+
+        </div>
+
+        <div class="mailing">
+            <h3>Подпишитесь на новостную рассылку</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus platea scelerisque bibendum integer nisi, quis sollicitudin feugiat. </p>
+            <form class="mail">
+                <input type="email" id="" name="email">
+                <button>Подписаться</button>
+            </form>
+        </div>
+
+    </footer>
+
+    <div class="load active"></div>
+    <script src="{% static 'js/jq.js' %}" charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js" charset="utf-8"></script>
+    <script src="{% static 'js/main.js' %}" charset="utf-8"></script>
+</body>
+
+</html>

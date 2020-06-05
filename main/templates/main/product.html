@@ -1,0 +1,35 @@
+{% extends 'main/base.html' %} {% block content %} {% load static %}
+<div class="content">
+    <div class="section-part">
+        <h1 class="caption">{{ product.title_ru }}</h1>
+    </div>
+    <section class="two-coluns">
+        <img src="{{ product.detail_image_1.url }}" alt="">
+        <div class="info-block right">
+            <h3 class="title">Описание</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus platea scelerisque bibendum integer nisi, quis sollicitudin feugiat. Sapien adipiscing ullamcorper arcu, augue blandit blandit ultricies facilisis. Lectus morbi viverra sed enim
+                tellus elementum commodo</p>
+        </div>
+
+        <div class="info-block left">
+            <h3 class="title">Техническая часть </h3>
+            <div class="table">
+                <span>Номер</span>
+                <span>SAT.14PX.0291</span>
+                <span>Материал</span>
+                <span>100% Cotton</span>
+                <span>Форма</span>
+                <span>Pembroke</span>
+            </div>
+        </div>
+
+        <img src="{{ product.detail_image_2.url }}" alt="">
+    </section>
+    <section class="four-columns">
+        <img src="{{ product.detail_image_3.url }}" alt="">
+        <img src="{{ product.detail_image_4.url }}" alt="">
+        <img src="{{ product.detail_image_5.url }}" alt="">
+        <img src="{{ product.detail_image_6.url }}" alt="">
+    </section>
+</div>
+{% endblock %}

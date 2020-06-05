@@ -1,0 +1,539 @@
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Playfair+Display&display=swap');
+
+/* Шрифты
+font-family: 'Playfair Display', serif; 400
+font-family: 'Montserrat', sans-serif; 400/500
+*/
+
+
+/* Цвета */
+
+:root {
+    --brown: #CAB59A;
+    --white: #FCFCFC;
+}
+
+::selection {
+    background: #555;
+    color: var(--white);
+}
+
+
+/* Цвета */
+
+html,
+body,
+span,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a {
+    color: #222;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 160%;
+    text-decoration: none;
+    margin: 10px 0;
+}
+
+body {
+    color: var(--white);
+    background: var(--white);
+    overflow-x: hidden;
+}
+
+
+/* шапка */
+
+header {
+    width: 100vw;
+    display: grid;
+}
+
+header a {
+    justify-self: center;
+}
+
+header a.mobile-logo-link {
+    justify-self: start;
+}
+
+header img.logo {
+    max-width: 240px;
+    user-select: none;
+    justify-self: center;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+header nav {
+    display: grid;
+    justify-self: stretch;
+    -ms-align-items: center;
+    align-items: center;
+    grid-template-columns: 1fr 2fr 1fr;
+    border-top: solid 1px #C9C9C9;
+    padding: 0 6vw;
+    user-select: none;
+}
+
+header nav div a {
+    display: inline-block;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    color: #333;
+    transition: all .3s;
+    margin: 15px 17.5px;
+    position: relative;
+}
+
+header nav .left-links a:nth-child(1)::after {
+    content: '';
+    display: block;
+    position: absolute;
+    background: #C9C9C9;
+    width: 1px;
+    height: 20px;
+    top: -1.5px;
+    right: -22px;
+}
+
+header nav .center-links {
+    justify-self: center;
+}
+
+header nav .center-links img.search {
+    margin: 0 15px;
+    margin-bottom: -5px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    width: 18px;
+    height: 18px;
+}
+
+header nav .center-links a:nth-last-child(3)::after {
+    content: '';
+    display: block;
+    position: absolute;
+    background: #C9C9C9;
+    width: 1px;
+    height: 20px;
+    top: -1.5px;
+    right: -22px;
+}
+
+header nav .right-links {
+    justify-self: end;
+}
+
+header nav .right-links a:nth-child(1)::after {
+    content: '';
+    display: block;
+    position: absolute;
+    background: #C9C9C9;
+    width: 1px;
+    height: 20px;
+    top: -1.5px;
+    right: -22px;
+}
+
+header nav div a:hover {
+    color: #000;
+}
+
+header nav input {
+    width: 1px;
+    transition: all .3s;
+    opacity: 0;
+    height: 22px;
+    transform: translateX(-10px);
+    padding: 0;
+    pointer-events: none;
+}
+
+header nav input.search-active {
+    width: 150px;
+    opacity: 1;
+    transform: translateX(0px);
+    padding: 0 5px;
+    pointer-events: all;
+}
+
+header nav input:focus {
+    outline: 1px solid #555;
+}
+
+header nav input::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+    background: #000;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+
+/* Mobile header */
+
+header .mobile-header {
+    display: none;
+}
+
+header .nav-mobile {
+    display: none;
+}
+
+
+/* Mobile menu open icon */
+
+header .menu {
+    height: 25px;
+    width: 25px;
+    margin-top: 25px;
+    transform: translate(-50%, -50%);
+}
+
+header .menu:hover {
+    cursor: pointer;
+}
+
+header .hambergerIcon {
+    height: 3px;
+    width: 25px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color: #333;
+    transform: translate(-50%, -50%) rotate(0deg);
+    transition: all ease 0.5s;
+}
+
+header .hambergerIcon::before,
+.hambergerIcon::after {
+    content: "";
+    position: absolute;
+    height: inherit;
+    border-radius: inherit;
+    background-color: inherit;
+    margin: auto;
+    width: 50%;
+    transition: all ease 0.5s;
+}
+
+header .hambergerIcon::before {
+    top: -7px;
+    left: 0;
+    transform-origin: left;
+}
+
+header .hambergerIcon::after {
+    bottom: -7px;
+    right: 0;
+    transform-origin: right;
+}
+
+header .open {
+    transform: translate(-50%, -50%) rotate(135deg);
+}
+
+header .open::before {
+    top: 0;
+    transform: translateX(100%) rotate(-90deg);
+}
+
+header .open::after {
+    bottom: 0;
+    transform: translateX(-100%) rotate(-90deg);
+}
+
+
+/* Mobile menu open icon */
+
+
+/* Mobile header */
+
+
+/* шапка */
+
+
+/* Футер */
+
+footer {
+    box-sizing: border-box;
+    width: 100vw;
+    border-top: solid 1px #C9C9C9;
+    padding: 30px 6vw 70px 6vw;
+    display: grid;
+    grid-template-columns: 2fr 2fr 2fr 3fr;
+}
+
+footer .column ul li {
+    padding: 3px 0;
+    list-style: none;
+    transition: all .3s;
+}
+
+footer .column ul a li {
+    color: #777;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+}
+
+footer .column ul a:hover li {
+    color: #000;
+}
+
+footer .column h3,
+footer .mailing h3 {
+    margin-top: 7px;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+}
+
+footer .mailing form {
+    max-width: 500px;
+    display: grid;
+    grid-gap: 5px;
+    grid-template-columns: 2fr 1fr;
+}
+
+footer .mailing form input {
+    font-size: 18px;
+    padding: 5px 15px;
+    font-weight: 500;
+}
+
+footer .mailing form input:focus {
+    outline: 1px solid #555;
+}
+
+footer .mailing form button {
+    color: #fff;
+    background: #333;
+    font-family: Playfair Display;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 160%;
+    padding: 7px 0;
+    border: none;
+}
+
+
+/* Футер */
+
+
+/* Компоненты */
+
+body.freeze {
+    position: fixed;
+    overflow: hidden;
+}
+
+section.history {
+    grid-template-columns: 3fr 2fr 2fr;
+    align-items: center;
+    grid-gap: 30px;
+}
+
+section.history.diteil-pro {
+    grid-template-columns: 2fr 3fr;
+}
+
+section.history img.history {
+    justify-self: center;
+    width: 100%;
+}
+
+section.events {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 25px;
+}
+
+section.assortiment {
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 25px;
+}
+
+section.brand-block {
+    grid-template-columns: 2fr 1fr;
+    grid-gap: 70px;
+    align-items: start;
+    margin-bottom: 50px;
+}
+
+section.brand-block .text {
+    margin-top: 30px;
+}
+
+section.next-event {
+    grid-template-columns: 4fr 3fr 3fr;
+    align-items: center;
+    grid-gap: 30px;
+}
+
+section.next-event .text {
+    margin-right: 50px;
+}
+
+section.next-event img {
+    width: 100%;
+}
+
+section.next-event .text h4 {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 160%;
+    /* or 22px */
+    color: #000000;
+    margin-top: 30px;
+    margin-bottom: -5px;
+}
+
+section.history.diteil-pro .text h1,
+section.next-event .text h1 {
+    font-family: Playfair Display;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 48px;
+    /* identical to box height */
+    color: #222222;
+}
+
+section.history.diteil-pro .text h1::after,
+section.next-event .text h1::after {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    height: 2px;
+    width: 170px;
+}
+
+section.prevent-events {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 25px;
+    margin-bottom: 50px;
+    padding-top: 0;
+}
+
+section.portfolio {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 25px;
+    grid-row-gap: 40px;
+    margin-bottom: 50px;
+}
+
+section.contacts {
+    margin: 50px 0;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 25px;
+    align-items: center;
+}
+
+section.contacts img {
+    width: 100%;
+}
+
+iframe.map {
+    margin-bottom: 100px;
+}
+
+section.brands {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-column-gap: 30px;
+    grid-row-gap: 40px;
+    margin-bottom: 50px;
+}
+
+section.two-images,
+section.two-coluns {
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 30px;
+    grid-row-gap: 50px;
+    align-items: center;
+}
+
+section.four-columns {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-column-gap: 0px;
+    align-items: center;
+}
+
+@media (max-width: 767px) {
+    section.history,
+    section.history.diteil-pro {
+        grid-template-columns: 2fr;
+        align-items: center;
+        grid-gap: 30px;
+    }
+    section.two-images {
+        grid-template-columns: 2fr;
+    }
+    section .text p {
+        font-size: 12px;
+        line-height: 160%;
+    }
+    section.history img.history:last-child {
+        display: none;
+    }
+    .section-part a.show-all {
+        margin-top: 40px;
+    }
+    section.events {
+        grid-template-columns: 1fr;
+    }
+    section.events .portfolio-item {
+        display: none;
+    }
+    section.events .portfolio-item:nth-child(1) {
+        display: grid;
+    }
+    section.assortiment {
+        grid-template-columns: 1fr;
+    }
+    section.assortiment .assortiment-item {
+        display: none;
+    }
+    section.assortiment .assortiment-item:nth-child(1) {
+        display: grid;
+    }
+    section.brand-block {
+        grid-template-columns: 1fr;
+        grid-gap: 0;
+    }
+    section.brand-block .text {
+        margin-top: 0;
+    }
+    section.brand-block {
+        margin-bottom: 20px;
+    }
+    section.portfolio {
+        grid-template-columns: 1fr;
+    }
+    section.next-event {
+        grid-template-columns: 4fr;
+    }
+    section.next-event .text {
+        margin-right: 0;
+    }
+    section.prevent-events {
+        grid-template-columns: 1fr;
+    }
+    section.brands {
+        grid-template-columns: 1fr;
+    }
