@@ -23,7 +23,8 @@ $('.switch_lang .lang').click(function() {
     $(this).addClass('active');
     let lang_id = this.id;
     if (lang_id == "eng") {
-        window.location.href = '/' + lang_id + window.location.pathname;
+        window.location.href = '/' + lang_id +
+
     } else if (lang_id == "ru") {
         window.location.href = window.location.href.replace('eng/', '');
     }
@@ -50,6 +51,5 @@ window.onload = function() {
 
 
 $('.portfolio-item .cover').click(function () {
-    window.location.href =  $(this).parent('.portfolio-item').children('a.more-button').prop('href');
+   alert(1);
 });
-
