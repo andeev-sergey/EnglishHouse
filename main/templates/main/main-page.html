@@ -63,13 +63,13 @@
                 <img src="media/{{ product.preview_image }}" alt="">
                 <div class="lay">
                     <h3 class="title">{{ product.title_ru }}</h3>
-                    <a href="product/{{ product.pk }}">Подробнее</a>
+                    <a href="product/{{ product.pk }}">Подробнее </a>
                 </div>
             </div>
        {% endfor %}
     </section>
     {% endif %}
-
+    <div class=""></div>
     
     <div class="section-part">
         <h1 class="caption">Любимые бренды</h1>
@@ -84,6 +84,6 @@
             <a href="{% url 'aboutus' %}#brands" class="more-button">Подробнее <img src="{% static 'img/more-button-arrow.svg' %}" alt=""></a>
         </div>
     </section>
-</div>
+</div> 
 
 {% endblock %}

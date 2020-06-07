@@ -50,6 +50,15 @@ window.onload = function() {
 
 
 $('.portfolio-item .cover').click(function () {
-    window.location.href =  $(this).parent('.portfolio-item').children('a.more-button').prop('href');
+    window.location.href = $(this).parent('.portfolio-item').children('a.more-button').prop('href');
 });
 
+$('.assortiment-item').click(function () {
+    window.location.href =
+        $(this).children('.lay').children('a').prop('href');
+});
+$('.brand-item .img-background').click(function () {
+    window.location.href =
+        $(this).parent('.brand-item').children('a').prop('href');
+
+});
