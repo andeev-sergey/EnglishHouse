@@ -13,6 +13,7 @@ urlpatterns = [
     path('portfolio', Portfolio.as_view(),name='portfolio'),
     path('portfolio/<pk>', PortfolioDetailView.as_view(), name='project-detail'),
     path('product/<pk>', ProductDetailView.as_view(), name='product-detail'),
+    path('brand-<slug>', BrandsProductsView.as_view(), name='brand-list'),
     path('contacts' , contacts_page, name='contacts'),
     path('about-us', AboutUsView.as_view(), name='aboutus'),
     path('some' ,  CategoryListView.as_view(), name='some'),

@@ -2,6 +2,7 @@
 <div class="content">
     <div class="section-part">
         <h1 class="caption">{{ product.title_ru }}</h1>
+        <a href="{% url 'brand-list' product.Brand.slug %}"><img src="{{ product.Brand.preview_image.url }}" alt=""></a>
     </div>
     <section class="two-coluns">
         <img src="{{ product.detail_image_1.url }}" alt="">

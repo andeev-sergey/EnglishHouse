@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .models import *
 from django.shortcuts import render
+from django.shortcuts import get_object_or_404
 from django.views.generic import ListView, View, DetailView
 # Create your views here.
 
@@ -71,4 +72,18 @@ class CategoryListView(ListView):
         context["cat"] = Category.objects.all()
         context["brand"] = Brand.objects.all()
         context["pro"] = Product.objects.all()
+        return context
+
+
+class BrandsProductsView(DetailView):
+    template_name = 'main/brand.html'
+    model = Brand
+    context_object_name = 'brand'
+#     def get_context_data(self, **kwargs):
+#         context = super().get_context_data(**kwargs)
+#         context['products'] = Product.objects.all()
+#         return context
+    def get_context_data(self, **kwargs):
+        context = super(BrandsProductsView,self).get_context_data(**kwargs)
+        context["products"] = Product.objects.all()
         return context

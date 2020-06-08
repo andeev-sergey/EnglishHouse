@@ -4,11 +4,10 @@
 
             <h1> Свет </h1>
 
-            {% for pro in pro %}
-                {% if pro.category.Title_ru == "Свет" %}
-                
-                    <span style="color: red">{{ pro.title_ru}} </span>
-                    <span style="color: blue">{{ pro.Brand }} </span>
+            {% for a in pro %}
+                {% if a.category.Title_ru == "Свет" %}
+
+                    <li style="color: blue">{{ a.Brand.title_ru }} </li> <br>
 
                 {% endif %}
             {% endfor %}

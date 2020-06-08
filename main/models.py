@@ -10,16 +10,23 @@ class Brand(models.Model):
     preview_image = models.ImageField('Превью', upload_to='images/brands', null=True, blank=False )
     detail_image_1 = models.ImageField('Внутреннее изобржение', upload_to='images/brands', null=False, blank=False)
     detail_image_2 = models.ImageField('Внутреннее изобржение', upload_to='images/brands', null=False, blank=False)
+    slug = models.SlugField(null=True)
 
     def image_tag(self):
         return u'<img src="%s">' % self.preview_image.url
 
+    def get_absolute_url(self):
+        return reverse('brand_detail', kwargs={'slug': self.slug})
+
     def __str__(self):
         return self.title_ru
 
+    def __unicode__(self):
+            return self.title_ru
     class Meta:
         verbose_name = "Бренд"
         verbose_name_plural ="Бренды"
+
 
 class Category(models.Model):
     Title_ru = models.CharField("Назвние категории eng", max_length=50)
