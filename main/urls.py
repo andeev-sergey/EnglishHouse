@@ -12,11 +12,11 @@ urlpatterns = [
     path('portfolio', Portfolio.as_view(),name='portfolio'),
     path('portfolio/<pk>', PortfolioDetailView.as_view(), name='project-detail'),
     path('product/<pk>', ProductDetailView.as_view(), name='product-detail'),
-    path('brand/<slug1>', BrandsProductsView.as_view(), name='brand-list'),
+    path('brand/<slug>', BrandsProductsView.as_view(), name='brand-list'),
     path('contacts' , contacts_page, name='contacts'),
     path('about-us', AboutUsView.as_view(), name='aboutus'),
     path('category/<slug>', CategoryView.as_view(), name='category_detail'),
-    path('category/<slug>/<slug1>', CategoryBrandView.as_view(), name='brand-category-list'),
+    path('category/<slug>/<slug1>', index, name='brand-category-list'),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

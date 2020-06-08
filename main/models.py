@@ -16,7 +16,7 @@ class Brand(models.Model):
         return u'<img src="%s">' % self.preview_image.url
 
     def get_absolute_url(self):
-        return reverse('brand_detail', kwargs={'slug': self.slug})
+        return reverse('brand_detail', kwargs={'slug1': self.slug})
 
     def __str__(self):
         return self.title_ru
@@ -31,6 +31,10 @@ class Brand(models.Model):
 class Category(models.Model):
     Title_ru = models.CharField("Назвние категории eng", max_length=50)
     Title_eng = models.CharField("Назвние категории eng", max_length=50)
+    brands = models.ManyToManyField(Brand,blank=True)
+    slug = models.SlugField(null=True)
+    def get_absolute_url(self):
+        return reverse('category_detail', kwargs={'slug': self.slug})
     class Meta:
         verbose_name = "Категория"
         verbose_name_plural ="Категории"
@@ -63,6 +67,7 @@ class Product(models.Model):
     class Meta:
         verbose_name = "Продукт"
         verbose_name_plural ="Продукты"
+
 
 
 class Event(models.Model):

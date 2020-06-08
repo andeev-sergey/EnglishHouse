@@ -1,0 +1,33 @@
+{% extends 'main/base.html' %} {% block content %} {% load static %}
+<div class="content">
+    <div class="section-part">
+        <h1 class="caption">{{ category.Title_ru }}</h1>
+        <a href="{% url 'brand-list' brand.slug %}"><img src="{{ brand.preview_image.url }}" alt=""></a>
+    </div>
+<!--    <section class="about-us history">-->
+<!--        <div class="text">-->
+<!--            <h2>История бренда</h2>-->
+<!--            <p>{{ brand.histiry_text_ru }}</p>-->
+<!--        </div>-->
+<!--        <img src="{{ brand.detail_image_1.url }}" class="history" alt="">-->
+<!--        <img src="{{ brand.detail_image_2.url }}" class="history" alt="">-->
+<!--    </section>-->
+<!--    <div  id='brands' class="section-part">-->
+<!--        <h1 class="caption">Ассортимент</h1>-->
+<!--    </div>-->
+    <section class="brands">
+        {% for q in products %}
+
+        <div class="assortiment-item">
+            <img src="{{ q.preview_image.url }}" alt="">
+            <div class="lay">
+                <h3 class="title">{{ q.title_ru }}</h3>
+                <a href="{% url 'product-detail' q.pk %}">Подробнее</a>
+            </div>
+        </div>
+
+        {% endfor %}
+
+    </section>
+</div>
+{% endblock %}

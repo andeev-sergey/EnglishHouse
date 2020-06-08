@@ -101,9 +101,19 @@ class BrandsProductsView(DetailView):
 
 class CategoryBrandView(DetailView):
         model = Category
-        template_name = "main/some.html"
+        template_name = "main/category-brand.html"
         context_object_name = 'category'
-        def get_context_data(self, **kwargs):
-            context = super().get_context_data(**kwargs)
-            context["categories"] = Category.objects.all()
-            return context
+
+#         def get_context_data(self, **kwargs):
+#             context = super().get_context_data(**kwargs)
+#             context["categories"] = Category.objects.all()
+#             context["products"] = Product.objects.all()
+#             return context
+def index(request, slug, slug1):
+    context = {
+    'products':  Product.objects.filter(Brand__slug=slug1),
+    'category': Category.objects.get(slug=slug),
+    'brand': Brand.objects.get(slug=slug1),
+    'categories': Category.objects.all()
+    }
+    return render(request, "main/category-brand.html", context)
