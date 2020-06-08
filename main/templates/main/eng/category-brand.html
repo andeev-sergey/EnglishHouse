@@ -1,7 +1,7 @@
-{% extends 'main/base.html' %} {% block content %} {% load static %}
+{% extends 'main/eng/base.html' %} {% block content %} {% load static %}
 <div class="content">
     <div class="section-part">
-        <h1 class="caption">{{ category.Title_ru }}</h1>
+        <h1 class="caption">{{ category.Title_eng }}</h1>
         <a href="{% url 'brand-list' brand.slug %}"><img src="{{ brand.preview_image.url }}" alt=""></a>
     </div>
     <!--    <section class="about-us history">-->
@@ -21,8 +21,8 @@
         <div class="assortiment-item">
             <img src="{{ q.preview_image.url }}" alt="">
             <div class="lay">
-                <h3 class="title">{{ q.title_ru }}</h3>
-                <a href="{% url 'product-detail' q.pk %}">Подробнее</a>
+                <h3 class="title">{{ q.title_eng }}</h3>
+                <a href="{% url 'product-detail-eng' q.pk %}">See more</a>
             </div>
         </div>
 

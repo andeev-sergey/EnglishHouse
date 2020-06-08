@@ -1,0 +1,43 @@
+{% extends 'main/eng/base.html' %} {% block content %} {% load static %}
+
+
+
+<div class="content">
+
+    <div class="section-part">
+        <h1 class="caption">Events</h1>
+    </div>
+    <section class="next-event">
+        <div class="text">
+            {% for event in events %} {% if event.in_head %}
+            <h1 class="caption">{{ event.title_eng }}</h1>
+            <p>{{ event.description_text_eng }}</p>
+            <h4>Дата и время начала мероприятия <span class="date-time"></span>{{ event.date_time|date:"Y-m-d H:i:s" }}</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus platea scelerisque bibendum integer nisi, quis sollicitudin feugiat. </p>
+            <form class="mail">
+                <input type="email" id="email" name="email">
+                <button>Subscribe</button>
+            </form>
+            {% endif %} {% endfor %}
+        </div>
+        <img src="{% static '/img/company-hostory-1.png' %}" class="history" alt="">
+        <img src="{% static '/img/company-hostory-2.png' %}" class="history" alt="">
+
+
+    </section>
+
+    <div class="section-part ">
+        <h1 class="caption down">Previous events</h1>
+    </div>
+    <section id="prevent-events" class="prevent-events">
+        {% for event in events %} {% if event.in_head %}{% else %}
+        <div class="portfolio-item">
+            <img class="cover" src="{{ event.preview_image.url }}" alt="">
+            <h3 class="title">{{ event.title_eng }}</h3>
+            <p>{{ event.description_text_eng }}</p>
+            <a href="{% url 'event-eng' event.pk %}" class="more-button">More <img src="{% static 'img/more-button-arrow.svg' %}" alt=""></a>-->
+        </div>
+        {% endif %} {% endfor %}
+    </section>
+</div>
+{% endblock %}

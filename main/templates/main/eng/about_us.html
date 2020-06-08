@@ -1,0 +1,32 @@
+{% extends 'main/eng/base.html' %} {% block content %} {% load static %}
+<div class="content">
+    <div class="section-part">
+        <h1 class="caption">About us</h1>
+    </div>
+    <section class="about-us history">
+        <div class="text">
+            <h2>Our history</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus platea scelerisque bibendum integer nisi, quis sollicitudin feugiat. Sapien adipiscing ullamcorper arcu, augue blandit blandit ultricies facilisis. Lectus morbi viverra sed enim
+                tellus elementum commodo. Lectus cursus eget nec volutpat ullamcorper urna massa. Dictum orci enim nunc enim. Sed quisque metus viverra nulla dui facilisis sed a non. Placerat cum cursus sit commodo. Metus ut urna massa, auctor massa accumsan
+                sem amet, dignissim. Vulputate libero id nunc, maecenas nisl nunc.</p>
+        </div>
+        <img src="{% static '/img/company-hostory-1.png' %}" class="history" alt="">
+        <img src="{% static '/img/company-hostory-2.png' %}" class="history" alt="">
+    </section>
+    <div id='brands' class="section-part">
+        <h1 class="caption">Brands</h1>
+    </div>
+    <section class="brands">
+        {% for brand in brands %}
+        <div class="brand-item">
+            <div class="img-background">
+                <img src="{{ brand.preview_image.url }}" alt="" class="cover">
+            </div>
+            <h3 class="title">{{ brand.title_eng }} products</h3>
+            <a href="{% url 'brand-list-eng' brand.slug %}">View all</a>
+        </div>
+        {% endfor %}
+
+    </section>
+</div>
+{% endblock %}

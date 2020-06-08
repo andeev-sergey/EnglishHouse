@@ -190,6 +190,8 @@
         font-size: 15px;
         line-height: 160%;
         padding: 5px 10px;
+        box-sizing: border-box;
+        width: 100%;
     }
     footer .mailing form button {
         font-size: 15px;
@@ -229,7 +231,7 @@
         padding: 7% 20px;
         max-width: 100vw;
         grid-template-columns: 1fr 1fr;
-        grid-column-gap: 5px;
+        grid-column-gap: 15px;
         grid-row-gap: 15px;
     }
     footer .column:nth-child(1) {

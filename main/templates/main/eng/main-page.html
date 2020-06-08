@@ -1,0 +1,86 @@
+{% extends 'main/eng/base.html' %} {% block content %} {% load static %}
+<div class="main-image">
+    <img class="cover-board" src="{% static 'img/main-img.png' %}" alt="">
+    <div class="main-image-text">
+        <span>Discover English House</span>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g clip-path="url(#clip0)">
+            <path d="M7.415 8.21002L12 12.795L16.585 8.21002L18 9.62502L12 15.625L6 9.62502L7.415 8.21002Z" fill="white"/>
+            </g>
+            <defs>
+            <clipPath id="clip0">
+            <rect width="24" height="24" fill="white"/>
+            </clipPath>
+            </defs>
+        </svg>
+
+    </div>
+
+</div>
+<div class="content">
+    <div class="section-part">
+        <h1 class="caption">Our history</h1>
+    </div>
+    <section class="history">
+        <div class="text">
+            <h2>English house</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus platea scelerisque bibendum integer nisi, quis sollicitudin feugiat. Sapien adipiscing ullamcorper arcu, augue blandit blandit ultricies facilisis. Lectus morbi viverra sed enim
+                tellus elementum commodo. Lectus cursus eget nec volutpat ullamcorper urna massa. Dictum orci enim nunc enim. Sed quisque metus viverra nulla dui facilisis sed a non. Placerat cum cursus sit commodo. Metus ut urna massa, auctor massa accumsan
+                sem amet, dignissim. Vulputate libero id nunc, maecenas nisl nunc.</p>
+            <a href="{% url 'aboutus-eng' %}" class="more-button">More <img src="{% static 'img/more-button-arrow.svg' %}" alt=""></a>
+        </div>
+        <img src="{% static '/img/company-hostory-1.png' %}" class="history" alt="">
+        <img src="{% static '/img/company-hostory-2.png' %}" class="history" alt="">
+    </section>
+
+
+
+
+    {% if events %}
+    <div class="section-part">
+        <h1 class="caption">Events</h1>
+        <a href="{% url 'events' %}" class="show-all">See all</a>
+    </div>
+
+    <section class="events">
+        {% for event in events %}
+        <div class="portfolio-item">
+            <img class="cover" src="{{ event.preview_image.url }}" alt="">
+            <h3 class="title">{{ event.title_eng }}</h3>
+            <p>{{ event.description_text_eng }}</p>
+            <a href="{% url 'event' event.pk %}" class="more-button">More <img src="{% static 'img/more-button-arrow.svg' %}" alt=""></a>
+        </div>
+        {% endfor %}
+    </section>
+    {% endif %} {% if products%}
+    <div class="section-part">
+        <h1 class="caption">Assortment</h1>
+    </div>
+    <section id='assortiment' class="assortiment">
+        {% for product in products %}
+        <div class="assortiment-item">
+            <img src="{{ product.preview_image.url }}" alt="">
+            <div class="lay">
+                <h3 class="title">{{ product.title_eng }}</h3>
+                <a href="{% url 'project-detail-eng' product.pk %}">More</a>
+            </div>
+        </div>
+        {% endfor %}
+    </section>
+    {% endif %}
+    <div class="section-part">
+        <h1 class="caption">Brands</h1>
+    </div>
+    <section class="brand-block">
+        <img src="{% static '/img/brand-block.png' %}" alt="">
+        <div class="text">
+            <h2>English house</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus platea scelerisque bibendum integer nisi, quis sollicitudin feugiat. Sapien adipiscing ullamcorper arcu, augue blandit blandit ultricies facilisis. Lectus morbi viverra sed enim
+                tellus elementum commodo. Lectus cursus eget nec volutpat ullamcorper urna massa. Dictum orci enim nunc enim. Sed quisque metus viverra nulla dui facilisis sed a non. Placerat cum cursus sit commodo. Metus ut urna massa, auctor massa accumsan
+                sem amet, dignissim. Vulputate libero id nunc, maecenas nisl nunc.</p>
+            <a href="{% url 'aboutus' %}#brands" class="more-button">More <img src="{% static 'img/more-button-arrow.svg' %}" alt=""></a>
+        </div>
+    </section>
+</div>
+
+{% endblock %}

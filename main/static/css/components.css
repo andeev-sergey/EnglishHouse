@@ -397,6 +397,13 @@ a.more-button:hover img {
 
 .info-block {
     width: 500px;
+    box-sizing: border-box;
+}
+
+@media (max-width: 767px) {
+    .info-block {
+        width: 100%;
+    }
 }
 
 .info-block.left {
@@ -435,11 +442,46 @@ a.more-button:hover img {
     margin: 3px;
 }
 
+@media (max-width: 767px) {
+    .info-block.left {
+        padding-left: 20px;
+        border-left: solid 2px #CAB59A;
+        justify-self: start;
+    }
+    .info-block.right {
+        padding-right: 20px;
+        border-right: solid 2px #CAB59A;
+        justify-self: end;
+    }
+    .info-block .table span {
+        font-size: 13px;
+    }
+    .info-block.right p {
+        font-size: 10px;
+        padding-bottom: 10px;
+    }
+    .info-block h3.title {
+        font-family: Playfair Display;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 20px;
+        margin-top: 0px;
+        margin-bottom: 30px;
+    }
+}
+
 .section-part {
     margin-top: 40px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
+}
+
+.section-part a {
+    max-width: 200px;
+    justify-self: end;
+    align-self: start;
 }
 
 @media (max-width: 767px) {
@@ -576,4 +618,32 @@ form.mail button {
 .switch_lang .lang.active {
     color: #111;
     font-size: 14px;
+}
+
+@media (max-width: 767px) {
+    .switch_lang {
+        position: fixed;
+        top: calc(100vh - 40px);
+        right: 20px;
+        z-index: 1000;
+        display: none;
+        opacity: 0;
+        transition: all .5s;
+    }
+    .switch_lang .lang {
+        color: #555;
+        cursor: pointer;
+        transition: all .3s;
+        font-size: 12px;
+        font-weight: 600;
+        opacity: .67;
+    }
+    .switch_lang .lang.active {
+        color: #111;
+        font-size: 14px;
+    }
+    .switch_lang.mobile {
+        display: block;
+        opacity: 1;
+    }
 }

@@ -1,0 +1,32 @@
+{% extends 'main/eng/base.html' %} {% block content %} {% load static %}
+<div class="content">
+    <div class="section-part">
+        <h1 class="caption">{{ category.Title_eng }}</h1>
+    </div>
+    <!--    <section class="about-us history">-->
+    <!--        <div class="text">-->
+    <!--            <h2>История бренда</h2>-->
+    <!--            <p>{{ brand.histiry_text_ru }}</p>-->
+    <!--        </div>-->
+    <!--        <img src="{{ brand.detail_image_1 }}" class="history" alt="">-->
+    <!--        <img src="{{ brand.detail_image_1 }}" class="history" alt="">-->
+    <!--    </section>-->
+    <!--    <div  id='brands' class="section-part">-->
+    <!--        <h1 class="caption">Ассортимент</h1>-->
+    <!--    </div>-->
+    <section class="brands">
+        {% for brand in category.brands.all %}
+
+        <div class="brand-item">
+            <div class="img-background">
+                <img src="{{ brand.preview_image.url }}" alt="" class="cover">
+            </div>
+            <h3 class="title">{{ brand.title_eng }} products</h3>
+            <a href="{% url 'brand-category-list-eng' category.slug  brand.slug %}">See more</a>
+        </div>
+
+        {% endfor %}
+
+    </section>
+</div>
+{% endblock %}

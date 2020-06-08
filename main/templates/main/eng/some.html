@@ -1,0 +1,16 @@
+{% extends 'main/base.html' %} {% block content %} {% load static %}
+
+
+
+            <h1> Свет </h1>
+
+            {% for a in brand %}
+                {% if a.category.Title_ru == "Свет2" %}
+
+                    <li style="color: blue">{{ a.Brand.title_ru }} </li> <br>
+
+                {% endif %}
+            {% endfor %}
+
+
+{% endblock %}

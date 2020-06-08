@@ -1,0 +1,31 @@
+{% extends 'main/eng/base.html' %} {% block content %} {% load static %}
+<div class="content">
+    <div class="section-part">
+        <h1 class="caption">{{ brand.title_eng }}</h1>
+    </div>
+    <section class="about-us history">
+        <div class="text">
+            <h2>Brand history</h2>
+            <p>{{ brand.histiry_text_eng }}</p>
+        </div>
+        <img src="{{ brand.detail_image_1.url }}" class="history" alt="">
+        <img src="{{ brand.detail_image_2.url }}" class="history" alt="">
+    </section>
+    <div id='brands' class="section-part">
+        <h1 class="caption">Assortment</h1>
+    </div>
+    <section class="brands">
+        {% for q in products %} {% if q.Brand.slug == brand.slug %}
+
+        <div class="assortiment-item">
+            <img src="{{ q.preview_image.url }}" alt="">
+            <div class="lay">
+                <h3 class="title">{{ q.title_eng }}</h3>
+                <a href="{% url 'product-detail-eng' q.pk %}">More</a>
+            </div>
+        </div>
+        {% endif %} {% endfor %}
+
+    </section>
+</div>
+{% endblock %}
