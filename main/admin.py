@@ -27,4 +27,10 @@ admin.site.register(Brand, BrandExport)
 admin.site.register(Product, ProductExport)
 admin.site.register(Event, EventExport)
 admin.site.register(Project)
-admin.site.register(Category)
+
+
+
+class CategoryAdmin(admin.ModelAdmin):
+    filter_horizontal = ('brands',)
+
+admin.site.register(Category, CategoryAdmin)

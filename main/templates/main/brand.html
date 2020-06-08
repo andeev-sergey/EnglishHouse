@@ -8,8 +8,8 @@
             <h2>История бренда</h2>
             <p>{{ brand.histiry_text_ru }}</p>
         </div>
-        <img src="{{ brand.detail_image_1 }}" class="history" alt="">
-        <img src="{{ brand.detail_image_1 }}" class="history" alt="">
+        <img src="{{ brand.detail_image_1.url }}" class="history" alt="">
+        <img src="{{ brand.detail_image_2.url }}" class="history" alt="">
     </section>
     <div  id='brands' class="section-part">
         <h1 class="caption">Ассортимент</h1>
@@ -22,7 +22,7 @@
             <img src="{{ q.preview_image.url }}" alt="">
             <div class="lay">
                 <h3 class="title">{{ q.title_ru }}</h3>
-                <a href="product/{{ q.pk }}">Подробнее </a>
+                <a href="{% url 'product-detail' q.pk %}">Подробнее</a>
             </div>
         </div>
         {% endif %}

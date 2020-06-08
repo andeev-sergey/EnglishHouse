@@ -33,12 +33,12 @@
                 <a href="{% url 'events' %}">События</a>
             </div>
             <div class="center-links">
-                <a href="#">Мебель</a>
-                <a href="#">Кухни</a>
-                <a href="#">Свет</a>
-                <a href="#">Текстиль</a>
-                <a href="#">Аксессуары</a>
-                <a href="#">Отделка</a>
+                {% for category in categories %}
+                    {% if category.brands.all %}
+                    <a href="{% url 'category_detail' category.slug %}">{{ category.Title_ru }}</a>
+                    {% endif %}
+                {% endfor %}
+
                 <input type="search">
                 <img src="{% static 'img/serch.svg' %}" alt="search" class="search">
             </div>
