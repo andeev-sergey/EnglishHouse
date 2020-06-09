@@ -1,4 +1,4 @@
-    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Playfair+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Playfair+Display&display=swap');
 
 /* Шрифты
 font-family: 'Playfair Display', serif; 400
@@ -122,30 +122,8 @@ header nav .center-links img.search {
     height: 18px;
 }
 
-header nav .center-links a:nth-last-child(3)::after {
-    content: '';
-    display: block;
-    position: absolute;
-    background: #C9C9C9;
-    width: 1px;
-    height: 20px;
-    top: -1.5px;
-    right: -22px;
-}
-
 header nav .right-links {
     justify-self: end;
-}
-
-header nav .right-links a:nth-child(1)::after {
-    content: '';
-    display: block;
-    position: absolute;
-    background: #C9C9C9;
-    width: 1px;
-    height: 20px;
-    top: -1.5px;
-    right: -22px;
 }
 
 header nav div a:hover {
@@ -470,7 +448,7 @@ section.two-coluns {
 
 section.four-columns {
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-column-gap: 0px;
+    grid-gap: 20px;
     align-items: center;
 }
 
@@ -506,12 +484,6 @@ section.four-columns {
     section.assortiment {
         grid-template-columns: 1fr;
     }
-    section.assortiment .assortiment-item {
-        display: none;
-    }
-    section.assortiment .assortiment-item:nth-child(1) {
-        display: grid;
-    }
     section.brand-block {
         grid-template-columns: 1fr;
         grid-gap: 0;
@@ -537,3 +509,33 @@ section.four-columns {
     section.brands {
         grid-template-columns: 1fr;
     }
+    section.four-columns {
+        grid-template-columns: 1fr;
+    }
+    section.contacts {
+        margin: 20px 0;
+        grid-template-columns: 1fr;
+        grid-gap: 25px;
+        align-items: center;
+    }
+    section.contacts .info-block.left {
+        padding-left: 20px;
+        border-left: solid 2px #CAB59A;
+        justify-self: start;
+    }
+    section.two-images,
+    section.two-coluns {
+        grid-template-columns: 1fr;
+        grid-column-gap: 30px;
+        grid-row-gap: 20px;
+        align-items: center;
+    }
+    section.two-images img,
+    section.two-coluns img {
+        width: 100%;
+    }
+    body>div.content>section.two-coluns>img:nth-child(4) {
+        grid-row: 3/3;
+        grid-column: 1/2;
+    }
+}

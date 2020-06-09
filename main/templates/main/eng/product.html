@@ -1,25 +1,25 @@
-{% extends 'main/base.html' %} {% block content %} {% load static %}
+{% extends 'main/eng/base.html' %} {% block content %} {% load static %}
 <div class="content">
     <div class="section-part">
-        <h1 class="caption">{{ product.title_ru }}</h1>
-        <a href="{% url 'brand-list' product.Brand.slug %}"><img src="{{ product.Brand.preview_image.url }}" alt=""></a>
+        <h1 class="caption">{{ product.title_eng }}</h1>
+        <a href="{% url 'brand-list-eng' product.Brand.slug %}"><img src="{{ product.Brand.preview_image.url }}" alt=""></a>
     </div>
     <section class="two-coluns">
         <img src="{{ product.detail_image_1.url }}" alt="">
         <div class="info-block right">
-            <h3 class="title">Описание</h3>
-            <p>{{ product.description_text_ru }}</p>
+            <h3 class="title">Description</h3>
+            <p>{{ product.description_text_eng }}</p>
         </div>
 
         <div class="info-block left">
-            <h3 class="title">Информация</h3>
+            <h3 class="title">Information</h3>
             <div class="table">
                 <span>SKU</span>
                 <span>{{ product.sku }}</span>
-                <span>Материал</span>
-                <span>{{ product.material_ru }}</span>
-                <span>Форма</span>
-                <span>{{ product.shape_ru }}</span>
+                <span>Material</span>
+                <span>{{ product.material_eng }}</span>
+                <span>Shape</span>
+                <span>{{ product.shape_eng }}</span>
             </div>
         </div>
 

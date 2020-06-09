@@ -1,0 +1,26 @@
+{% extends 'main/eng/base.html' %} {% block content %} {% load static %}
+
+<div class="content">
+    <div class="section-part">
+        <h1 class="caption">{{ project.title_eng }}</h1>
+    </div>
+    <section class="history diteil-pro">
+        <div class="text">
+            <h1 class="caption">Task</h1>
+            <p>{{ project.target_text_eng }}</p>
+        </div>
+        <img src="{{ project.detail_image_1.url }}" class="history" alt="">
+    </section>
+    <section class="two-images">
+        <img src="{{ project.detail_image_2.url }}" alt=""><img src="{{ project.detail_image_3.url }}" alt="">
+    </section>
+    <section class="history diteil-pro">
+        <div class="text">
+            <h1 class="caption">Description</h1>
+            <p>{{ project.description_text_eng }}</p>
+        </div>
+        <img src="{{ project.detail_image_4.url }}" class="history" alt="">
+    </section>
+</div>
+
+{% endblock %}

@@ -1,11 +1,8 @@
 $(function() {
-    // Поиск
-    $('header nav .center-links img.search').click(function() {
-        $('.center-links input').toggleClass('search-active');
-        $('.center-links input').focusout(function() {
-            $('.center-links input').removeClass('search-active');
-        });
-    });
+
+
+    var lockOrientation = screen.lockOrientation || screen.mozLockOrientation || screen.msLockOrientation;
+    lockOrientation("landscape-primary");
     // скрол со слайдера
     $('.main-image .main-image-text').click(function() {
         $('html, body').animate({ scrollTop: $('section').height() }, 600);
@@ -14,6 +11,9 @@ $(function() {
     $(".menu").on('click', function() {
         $(this).find(".hambergerIcon").toggleClass("open");
         $('.nav-mobile').toggleClass('active');
+        setTimeout(() => {
+            $('.switch_lang').toggleClass('mobile');
+        }, 500);
         $('body').toggleClass('freeze');
     });
 });
@@ -40,6 +40,7 @@ function defrozen_window() {
 };
 
 window.onload = function() {
+
     frozen_window();
     $('.load.active').css('opacity', '0');
     setTimeout(function() {
@@ -49,7 +50,16 @@ window.onload = function() {
 };
 
 
-$('.portfolio-item .cover').click(function () {
-    window.location.href =  $(this).parent('.portfolio-item').children('a.more-button').prop('href');
+$('.portfolio-item .cover').click(function() {
+    window.location.href = $(this).parent('.portfolio-item').children('a.more-button').prop('href');
 });
 
+$('.assortiment-item').click(function() {
+    window.location.href =
+        $(this).children('.lay').children('a').prop('href');
+});
+$('.brand-item .img-background').click(function() {
+    window.location.href =
+        $(this).parent('.brand-item').children('a').prop('href');
+
+});

@@ -35,10 +35,10 @@
     {% for event in events %}
     {% if event.in_head %}{% else %}
         <div class="portfolio-item">
-            <img class="cover" src="media/{{ event.preview_image }}" alt="">
+            <img class="cover" src="{{ event.preview_image.url }}" alt="">
             <h3 class="title">{{ event.title_ru }}</h3>
             <p>{{ event.description_text_ru }}</p>
-            <a href="events/{{ event.pk }}" class="more-button">Подробнее <img src="static/img/more-button-arrow.svg" alt=""></a>-->   
+            <a href="{% url 'event' event.pk  %}" class="more-button">Подробнее <img src="static/img/more-button-arrow.svg" alt=""></a>
         </div>
     {% endif %}
     {% endfor %}
