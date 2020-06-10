@@ -1,8 +1,7 @@
 $(function() {
 
 
-    var lockOrientation = screen.lockOrientation || screen.mozLockOrientation || screen.msLockOrientation;
-    lockOrientation("landscape-primary");
+
     // скрол со слайдера
     $('.main-image .main-image-text').click(function() {
         $('html, body').animate({ scrollTop: $('section').height() }, 600);
@@ -39,15 +38,6 @@ function defrozen_window() {
     $('body').css('overflow-y', 'auto');
 };
 
-window.onload = function() {
-
-    frozen_window();
-    $('.load.active').css('opacity', '0');
-    setTimeout(function() {
-        defrozen_window();
-        $('.load.active').hide();
-    }, 1000);
-};
 
 
 $('.portfolio-item .cover').click(function() {
@@ -63,3 +53,45 @@ $('.brand-item .img-background').click(function() {
         $(this).parent('.brand-item').children('a').prop('href');
 
 });
+
+
+
+
+window.onload = function() {
+    if (window.innerWidth >= 767) {
+        frozen_window();
+        $('.load.active').css('opacity', '0');
+        setTimeout(function() {
+            defrozen_window();
+            $('.load.active').hide();
+        }, 1000);
+    } else {
+        if ((window.location.pathname == '/') || (window.location.pathname == '/eng/')) {
+            frozen_window();
+            $('.mobilepre').css('left', '0px'); //.css('background', '#fff');
+            setTimeout(function() {
+                $('.mobilepre img').css('transform', 'translateY(1px)').css('opacity', '1');
+            }, 1000);
+            setTimeout(function() {
+                setTimeout(function() {
+                    defrozen_window();
+
+                    $('.mobilepre img').css('opacity', '0');
+                }, 2000);
+                setTimeout(function() {
+                    defrozen_window();
+                    $('.mobilepre').css('left', '-100vw');
+                    $('.load.active').hide();
+                }, 3000);
+
+            }, 500);
+        } else {
+            frozen_window();
+            $('.load.active').css('opacity', '0');
+            setTimeout(function() {
+                defrozen_window();
+                $('.load.active').hide();
+            }, 1000);
+        }
+    }
+};

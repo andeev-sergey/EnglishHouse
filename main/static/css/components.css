@@ -647,3 +647,30 @@ form.mail button {
         opacity: 1;
     }
 }
+
+.mobilepre {
+    display: none;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: -100vw;
+    background: #000;
+    z-index: 1000000000;
+    transition: ease-out 1s;
+}
+
+@media (max-width: 767px) {
+    .mobilepre {
+        display: grid;
+    }
+}
+
+.mobilepre img {
+    max-width: 50vw;
+    align-self: center;
+    justify-self: center;
+    opacity: 0;
+    transition: ease-out 1s;
+    transform: translateY(50px);
+}

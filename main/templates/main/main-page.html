@@ -44,29 +44,28 @@
 
     <section class="events">
         {% for event in events %}
-            <div class="portfolio-item">
-                <img class="cover" src="media/{{ event.preview_image }}" alt="">
-                <h3 class="title">{{ event.title_ru }}</h3>
-                <p>{{ event.description_text_ru }}</p>
-                <a href="events/{{ event.pk }}" class="more-button">Подробнее <img src="{% static 'img/more-button-arrow.svg' %}" alt=""></a>
-            </div>
+        <div class="portfolio-item">
+            <img class="cover" src="media/{{ event.preview_image }}" alt="">
+            <h3 class="title">{{ event.title_ru }}</h3>
+            <p>{{ event.description_text_ru }}</p>
+            <a href="events/{{ event.pk }}" class="more-button">Подробнее <img src="{% static 'img/more-button-arrow.svg' %}" alt=""></a>
+        </div>
         {% endfor %}
     </section>
-    {% endif %}
-    {% if products%}
+    {% endif %} {% if products%}
     <div class="section-part">
         <h1 class="caption">Наш ассортимент </h1>
     </div>
     <section id='assortiment' class="assortiment">
         {% for product in products %}
-            <div class="assortiment-item">
-                <img src="media/{{ product.preview_image }}" alt="">
-                <div class="lay">
-                    <h3 class="title">{{ product.title_ru }}</h3>
-                    <a href="product/{{ product.pk }}">Подробнее </a>
-                </div>
+        <div class="assortiment-item">
+            <img src="media/{{ product.preview_image }}" alt="">
+            <div class="lay">
+                <h3 class="title">{{ product.title_ru }}</h3>
+                <a href="product/{{ product.pk }}">Подробнее </a>
             </div>
-       {% endfor %}
+        </div>
+        {% endfor %}
     </section>
     {% endif %}
     <div class="section-part">
@@ -82,6 +81,8 @@
             <a href="{% url 'aboutus' %}#brands" class="more-button">Подробнее <img src="{% static 'img/more-button-arrow.svg' %}" alt=""></a>
         </div>
     </section>
-</div> 
-
+</div>
+<div class="mobilepre">
+    <img src="{% static 'img/logo-black.png' %}" alt="">
+</div>
 {% endblock %}
