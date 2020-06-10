@@ -1,6 +1,6 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -14,63 +14,63 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Ангийский дом</title>
+    <title>English House</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="viewport" content="width=320">
 </head>
 
-<body>
+<body id='shell'>
     <div class="switch_lang">
 
-        <span id="ru" class="lang active">RU</span>
-        <span id='eng' class="lang ">ENG</span>
+        <span id="ru" class="lang">RU</span>
+        <span id='eng' class="lang active">ENG</span>
     </div>
     <header>
-        <a href="{% url 'main' %}" class="logo-link"><img class="logo" src="{% static 'img/logo.png' %}" alt=""></a>
+        <a href="{% url 'main-eng' %}" class="logo-link"><img class="logo" src="{% static 'img/logo.png' %}" alt=""></a>
         <nav>
             <div class="left-links">
-                <a href="{% url 'portfolio' %}">Наши проекты</a>
-                <a href="{% url 'events' %}">События</a>
+                <a href="{% url 'portfolio-eng' %}">Projects</a>
+                <a href="{% url 'events-eng' %}">Events</a>
             </div>
             <div class="center-links">
                 {% for category in categories %} {% if category.brands.all %}
-                <a href="{% url 'category_detail' category.slug %}">{{ category.Title_ru }}</a> {% endif %} {% endfor %}
+                <a href="{% url 'category_detail-eng' category.slug %}">{{ category.Title_eng }}</a> {% endif %} {% endfor %}
 
 
             </div>
             <div class="right-links">
-                <a href="{% url 'aboutus' %}">О нас</a>
-                <a href="{% url 'contacts' %}">Контакты</a>
+                <a href="{% url 'aboutus-eng' %}">About us</a>
+                <a href="{% url 'contacts-eng' %}">Contacts</a>
             </div>
         </nav>
         <div class="mobile-header">
-            <a href="{% url 'main' %}" class="mobile-logo-link"><img src="{% static 'img/logo-mobile.png' %}" alt="LOGO" class="mobile-logo"></a>
+            <a href="{% url 'main-eng' %}" class="mobile-logo-link"><img src="{% static 'img/logo-mobile.png' %}" alt="LOGO" class="mobile-logo"></a>
             <div class="menu">
                 <div class="hambergerIcon"></div>
             </div>
         </div>
         <div class="nav-mobile">
-            <h3>Наш ассортимент</h3>
+            <h3>Assortment</h3>
             <ul>
                 {% for category in categories %} {% if category.brands.all %}
-                <a href="{% url 'category_detail' category.slug %}">
-                    <li>{{ category.Title_ru }}</li>
+                <a href="{% url 'category_detail-eng' category.slug %}">
+                    <li>{{ category.Title_eng }}</li>
                 </a>
                 {% endif %} {% endfor %}
             </ul>
             <h3>English House</h3>
             <ul>
-                <a href="{% url 'portfolio' %}">
-                    <li>Наши проекты</li>
+                <a href="{% url 'portfolio-eng' %}">
+                    <li>Projects</li>
                 </a>
-                <a href="{% url 'events' %}">
-                    <li>События</li>
+                <a href="{% url 'events-eng' %}">
+                    <li>Events</li>
                 </a>
-                <a href="{% url 'contacts' %}">
-                    <li>Контакты</li>
+                <a href="{% url 'contacts-eng' %}">
+                    <li>Contacts</li>
                 </a>
-                <a href="{% url 'aboutus' %}">
-                    <li>О нас</li>
+                <a href="{% url 'aboutus-eng' %}">
+                    <li>About us</li>
                 </a>
             </ul>
         </div>
@@ -83,36 +83,36 @@
 
     <footer>
         <div class="column">
-            <h3>О компании</h3>
+            <h3>About company</h3>
             <ul>
-                <a href="{% url 'aboutus' %}">
-                    <li>О нас</li>
+                <a href="{% url 'aboutus-eng' %}">
+                    <li>About us</li>
                 </a>
-                <a href="{% url 'contacts' %}">
-                    <li>Контакты</li>
+                <a href="{% url 'contacts-eng' %}">
+                    <li>Contacts</li>
                 </a>
-                <a href="{% url 'events' %}">
-                    <li>События</li>
+                <a href="{% url 'events-eng' %}">
+                    <li>Events</li>
                 </a>
             </ul>
         </div>
         <div class="column">
-            <h3>Наш ассортимент</h3>
+            <h3>Assortment</h3>
             <ul>
                 {% for category in categories %} {% if category.brands.all %}
-                <a href="{% url 'category_detail' category.slug %}">
-                    <li>{{ category.Title_ru }}</li>
+                <a href="{% url 'category_detail-eng' category.slug %}">
+                    <li>{{ category.Title_eng }}</li>
                 </a>
                 {% endif %} {% endfor %}
             </ul>
 
         </div>
         <div class="column">
-            <h3>Проекты</h3>
+            <h3>Projects</h3>
             <ul>
                 {% for q in projects %}
-                <a href="{% url 'project-detail' q.pk %}">
-                    <li>{{ q.title_ru }}</li>
+                <a href="{% url 'project-detail-eng' q.pk %}">
+                    <li>{{ q.title_eng }}</li>
                 </a>
                 {% endfor %}
             </ul>
@@ -120,11 +120,11 @@
         </div>
 
         <div class="mailing">
-            <h3>Подпишитесь на новостную рассылку</h3>
+            <h3>Subscribe to our newsletter</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus platea scelerisque bibendum integer nisi, quis sollicitudin feugiat. </p>
             <form class="mail">
                 <input type="email" id="" name="email">
-                <button>Подписаться</button>
+                <button>Subscribe</button>
             </form>
         </div>
 

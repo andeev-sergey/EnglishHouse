@@ -1,0 +1,20 @@
+{% extends 'main/eng/base.html' %} {% block content %} {% load static %}
+
+<div class="content">
+    {% if projects %}
+    <div class="section-part">
+        <h1 class="caption">Project</h1>
+    </div>
+    <section class="portfolio">
+        {% for project in projects %}
+        <div class="portfolio-item">
+            <img class="cover" src="{{ project.preview_image.url }}" alt="">
+            <h3 class="title">{{project.title_eng }}</h3>
+            <p>{{ project.description_text_eng }}</p>
+            <a href="{% url 'project-detail-eng' project.pk %}" class="more-button">More <img src="{% static 'img/more-button-arrow.svg' %}" alt=""></a>
+        </div>
+        {% endfor %}
+    </section>
+    {% endif %}
+</div>
+{% endblock %}
