@@ -19,12 +19,16 @@ $(function() {
 
 
 $('.switch_lang .lang').click(function() {
-    $(this).addClass('active');
+
     let lang_id = this.id;
     if (lang_id == "eng") {
-        window.location.href = '/' + lang_id + window.location.pathname;
+        if ($(this).hasClass('active')) {} else {
+            window.location.href = '/' + lang_id + window.location.pathname;
+        }
     } else if (lang_id == "ru") {
-        window.location.href = window.location.href.replace('eng/', '');
+        if ($(this).hasClass('active')) {} else {
+            window.location.href = window.location.href.replace('eng/', '');
+        }
     }
     $(this).siblings('.lang').removeClass('active');
 
@@ -38,6 +42,15 @@ function defrozen_window() {
     $('body').css('overflow-y', 'auto');
 };
 
+
+$('#ru-version').click(function(e) {
+    e.preventDefault();
+    $('#ru').trigger("click");
+});
+$('#eng-version').click(function(e) {
+    e.preventDefault();
+    $('#eng').trigger("click");
+});
 
 
 $('.portfolio-item .cover').click(function() {

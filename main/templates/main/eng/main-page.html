@@ -19,7 +19,7 @@
 </div>
 <div class="content">
     <div class="section-part">
-        <h1 class="caption">Our history</h1>
+        <h1 class="caption">About brand</h1>
     </div>
     <section class="history">
         <div class="text">
@@ -54,31 +54,30 @@
     </section>
     {% endif %} {% if products%}
     <div class="section-part">
-        <h1 class="caption">Assortment</h1>
+        <h1 class="caption">Our brands</h1>
     </div>
     <section id='assortiment' class="assortiment">
-        {% for product in products %}
-        <div class="assortiment-item">
-            <img src="{{ product.preview_image.url }}" alt="">
-            <div class="lay">
-                <h3 class="title">{{ product.title_eng }}</h3>
-                <a href="{% url 'project-detail-eng' product.pk %}">More</a>
+        {% for brand in brands %}
+        <div class="brand-item">
+            <div class="img-background">
+                <img src="{{ brand.preview_image.url }}" alt="" class="cover">
             </div>
+            <h3 class="title">{{ brand.title_eng }}</h3>
+
+            <a style="display: none;" href="{% url 'brand-list' brand.slug %}">See all</a>
         </div>
         {% endfor %}
     </section>
     {% endif %}
     <div class="section-part">
-        <h1 class="caption">Brands</h1>
+        <h1 class="caption">Project</h1>
     </div>
     <section class="brand-block">
-        <img src="{% static '/img/brand-block.png' %}" alt="">
+        <img src="{{ random_case.detail_image_1.url }}" alt="">
         <div class="text">
-            <h2>English house</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus platea scelerisque bibendum integer nisi, quis sollicitudin feugiat. Sapien adipiscing ullamcorper arcu, augue blandit blandit ultricies facilisis. Lectus morbi viverra sed enim
-                tellus elementum commodo. Lectus cursus eget nec volutpat ullamcorper urna massa. Dictum orci enim nunc enim. Sed quisque metus viverra nulla dui facilisis sed a non. Placerat cum cursus sit commodo. Metus ut urna massa, auctor massa accumsan
-                sem amet, dignissim. Vulputate libero id nunc, maecenas nisl nunc.</p>
-            <a href="{% url 'aboutus' %}#brands" class="more-button">More <img src="{% static 'img/more-button-arrow.svg' %}" alt=""></a>
+            <h2>{{ random_case.title_eng }}</h2>
+            <p>{{ random_case.description_text_eng }}</p>
+            <a href="{% url 'project-detail' random_case.pk %}" class="more-button">More <img src="{% static 'img/more-button-arrow.svg' %}" alt=""></a>
         </div>
     </section>
 </div>

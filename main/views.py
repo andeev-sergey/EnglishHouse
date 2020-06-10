@@ -15,6 +15,8 @@ class MainView(ListView):
         context["products"] = Product.objects.all()[:4]
         context["categories"] = Category.objects.all()
         context["projects"] = Project.objects.all()[:5]
+        context["brands"] = Brand.objects.all()[:4]
+        context['random_case'] = Project.objects.order_by('?').first()
         return context
 
 class EventsView(ListView):
@@ -118,6 +120,8 @@ class EngMainView(ListView):
         context["products"] = Product.objects.all()[:4]
         context["categories"] = Category.objects.all()
         context["projects"] = Project.objects.all()[:5]
+        context["brands"] = Brand.objects.all()[:4]
+        context['random_case'] = Project.objects.order_by('?').first()
         return context
 
 class EngEventsView(ListView):

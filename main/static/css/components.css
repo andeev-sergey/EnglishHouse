@@ -622,29 +622,7 @@ form.mail button {
 
 @media (max-width: 767px) {
     .switch_lang {
-        position: fixed;
-        top: calc(100vh - 40px);
-        right: 20px;
-        z-index: 1000;
         display: none;
-        opacity: 0;
-        transition: all .5s;
-    }
-    .switch_lang .lang {
-        color: #555;
-        cursor: pointer;
-        transition: all .3s;
-        font-size: 12px;
-        font-weight: 600;
-        opacity: .67;
-    }
-    .switch_lang .lang.active {
-        color: #111;
-        font-size: 14px;
-    }
-    .switch_lang.mobile {
-        display: block;
-        opacity: 1;
     }
 }
 
@@ -673,4 +651,26 @@ form.mail button {
     opacity: 0;
     transition: ease-out 1s;
     transform: translateY(50px);
+}
+
+a.call-mobile img {
+    width: 30px;
+    background: #fff;
+    border-radius: 50%;
+    transition: ease-in .5s;
+    transform: rotate(180deg);
+}
+
+a.call-mobile {
+    display: none;
+    position: fixed;
+    right: 20px;
+    bottom: 10px;
+    z-index: 100;
+}
+
+@media (max-width: 767px) {
+    a.call-mobile {
+        display: block;
+    }
 }

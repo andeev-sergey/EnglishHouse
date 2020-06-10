@@ -73,12 +73,18 @@
                     <li>О нас</li>
                 </a>
             </ul>
+            <ul>
+                <a id="eng-version" href="">
+                    <li>English version</li>
+                </a>
+            </ul>
         </div>
     </header>
 
     {% block content %} {% endblock %}
 
 
+    <a class="call-mobile" href="tel:+799999999"><img src="{% static 'img/call.svg' %}" alt=""></a>
 
 
     <footer>
@@ -129,7 +135,6 @@
         </div>
 
     </footer>
-
     <div class="load active"></div>
     <script src="{% static 'js/jq.js' %}" charset="utf-8"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js" charset="utf-8"></script>
