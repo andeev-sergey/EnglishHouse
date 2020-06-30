@@ -22,13 +22,17 @@ class EventExport(ImportExportModelAdmin):
     class Meta:
         model = Event
 
+class EventRequestAdmin(admin.ModelAdmin):
+    list_display = ('email','time','status')
+class SubRequestAdmin(admin.ModelAdmin):
+    list_display = ('email','time','status')
 
 admin.site.register(Brand, BrandExport)
 admin.site.register(Product, ProductExport)
 admin.site.register(Event, EventExport)
 admin.site.register(Project)
-
-
+admin.site.register(EventRequest, EventRequestAdmin)
+admin.site.register(SubRequest, SubRequestAdmin)
 
 class CategoryAdmin(admin.ModelAdmin):
     filter_horizontal = ('brands',)

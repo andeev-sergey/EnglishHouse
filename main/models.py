@@ -109,3 +109,26 @@ class Project(models.Model):
 
     def get_absolute_url(self):
         return reverse("_detail", kwargs={"pk": self.pk})
+
+
+class EventRequest(models.Model):
+    email = models.CharField('Email', max_length=100, null=True)
+    time = models.DateTimeField('Дата подачи заявки', auto_now=True, auto_now_add=False)
+    status = models.BooleanField("Обработан", default=False)
+    class Meta:
+        verbose_name = "Заявка на участие в мероприятии"
+        verbose_name_plural = "Заявки на участие в мероприятиях"
+
+    def __str__(self):
+        return self.email
+
+class SubRequest(models.Model):
+    email = models.CharField('Email', max_length=100, null=True)
+    time = models.DateTimeField('Дата подачи заявки', auto_now=True, auto_now_add=False)
+    status = models.BooleanField("Обработан", default=False)
+    class Meta:
+        verbose_name = "Заявка email расслку"
+        verbose_name_plural = "Заявки на email рассылки"
+
+    def __str__(self):
+        return self.email

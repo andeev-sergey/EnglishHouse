@@ -16,6 +16,7 @@
                     <h4>Дата и время начала мероприятия <span class="date-time"></span>{{ event.date_time }}</h4>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus platea scelerisque bibendum integer nisi, quis sollicitudin feugiat. </p>
                     <form class="mail">
+                         {% csrf_token %}
                         <input type="email" id="email" name="email">
                         <button>Записаться</button>
                     </form>

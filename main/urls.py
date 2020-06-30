@@ -2,7 +2,13 @@ from django.urls import path
 from .views import *
 from django.conf import settings
 from django.conf.urls.static import static
-from django.shortcuts import render
+# from django.shortcuts import render
+# from django.conf.urls import handler404
+
+
+handler404 = 'main.views.handler404'
+
+
 
 urlpatterns = [
     path('', MainView.as_view(), name='main'),
@@ -27,7 +33,9 @@ urlpatterns = [
     path('eng/about-us', EngAboutUsView.as_view(), name='aboutus-eng'),
     path('eng/category/<slug>', EngCategoryView.as_view(), name='category_detail-eng'),
     path('eng/category/<slug>/<slug1>', engindex, name='brand-category-list-eng'),
+    path('event-request', event_request, name='event-request'),
+    path('eng/event-request', event_request, name='event-request'),
+    path('sub-request', sub_request, name='sub-request'),
 ]
-
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

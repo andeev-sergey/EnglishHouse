@@ -129,7 +129,8 @@
             <h3>Подпишитесь на новостную рассылку</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus platea scelerisque bibendum integer nisi, quis sollicitudin feugiat. </p>
             <form class="mail">
-                <input type="email" id="" name="email">
+                  {% csrf_token %}
+                <input type="email" id="email-sub" name="email">
                 <button>Подписаться</button>
             </form>
         </div>

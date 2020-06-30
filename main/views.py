@@ -1,8 +1,10 @@
 from django.shortcuts import render
 from .models import *
-from django.shortcuts import render
+from django.shortcuts import render, render_to_response
+from django.template import RequestContext
 from django.shortcuts import get_object_or_404
 from django.views.generic import ListView, View, DetailView
+from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
 # Create your views here.
 
 
@@ -213,3 +215,27 @@ def engindex(request, slug, slug1):
     'projects':  Project.objects.all()[:5]
     }
     return render(request, "main/eng/category-brand.html", context)
+
+def event_request(request):
+    if request.POST:
+        email = request.POST.get('email')
+        EventRequest.objects.create(
+            email = email,
+            )
+        return HttpResponse("ok",content_type="text/html")
+    else:
+        return HttpResponse("no",content_type="text/html")
+
+def sub_request(request):
+    if request.POST:
+        email = request.POST.get('email')
+        SubRequest.objects.create(
+            email = email,
+            )
+        return HttpResponse("ok",content_type="text/html")
+    else:
+        return HttpResponse("no",content_type="text/html")
+
+
+def handler404(request, exception):
+    return render(request, 'main/404.html', locals())
