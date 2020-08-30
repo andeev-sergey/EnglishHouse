@@ -11,7 +11,7 @@
             <img class="cover" src="{{ project.preview_image.url }}" alt="">
             <h3 class="title">{{project.title_ru }}</h3>
             <p>{{ project.description_text_ru }}</p>
-            <a href="{% url 'project-detail' project.pk %}" class="more-button">Подробнее <img src="{% static 'img/more-button-arrow.svg' %}" alt=""></a>
+            <a href="{% url 'project-detail' project.pk %}" class="more-button">Далее <img src="{% static 'img/more-button-arrow.svg' %}" alt=""></a>
         </div>
         {% endfor %}
     </section>

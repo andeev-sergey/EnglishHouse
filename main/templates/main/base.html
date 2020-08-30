@@ -15,8 +15,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Ангийский дом</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="viewport" content="width=320">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
 </head>
 
 <body>
@@ -26,12 +26,16 @@
     <nav>
         <div class="left-links">
             <a href="{% url 'portfolio' %}">Наши проекты</a>
-            <a href="{% url 'events' %}">События</a>
+            <a href="{% url 'events' %}">Мероприятия</a>
         </div>
         <div class="center-links">
             {% for category in categories %} {% if category.brands.all %}
                 <a href="{% url 'category_detail' category.slug %}">{{ category.Title_ru }}</a> {% endif %} {% endfor %}
+            <form action="{% url 'search_results' %}" method="get" id="search">
+                <img src="{% static 'img/serch.svg' %}" alt="" class="search">
+                <input name="q" type="text" placeholder="Поиск...">
 
+            </form>
 
         </div>
         <div class="right-links">
@@ -45,8 +49,8 @@
         </div>
     </nav>
     <div class="mobile-header">
-        <a href="{% url 'main' %}" class="mobile-logo-link"><img src="{% static 'img/logo-mobile.png' %}" alt="LOGO"
-                                                                 class="mobile-logo"></a>
+        <a href="{% url 'main' %}" class="mobile-logo-link">
+            <img src="{% static 'img/logo-mobile.png' %}" alt="LOGO" class="mobile-logo"></a>
         <div class="menu">
             <div class="hambergerIcon"></div>
         </div>
@@ -66,7 +70,7 @@
                 <li>Наши проекты</li>
             </a>
             <a href="{% url 'events' %}">
-                <li>События</li>
+                <li>Мероприятия</li>
             </a>
             <a href="{% url 'contacts' %}">
                 <li>Контакты</li>
@@ -100,7 +104,7 @@
                 <li>Контакты</li>
             </a>
             <a href="{% url 'events' %}">
-                <li>События</li>
+                <li>Мероприятия</li>
             </a>
         </ul>
     </div>

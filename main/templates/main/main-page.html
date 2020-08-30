@@ -33,7 +33,7 @@
                     nunc enim. Sed quisque metus viverra nulla dui facilisis sed a non. Placerat cum cursus sit commodo.
                     Metus ut urna massa, auctor massa accumsan
                     sem amet, dignissim. Vulputate libero id nunc, maecenas nisl nunc.</p>
-                <a href="#" class="more-button">Подробнее <img src="{% static 'img/more-button-arrow.svg' %}"
+                <a href="{% url 'aboutus' %}" class="more-button">Далее <img src="{% static 'img/more-button-arrow.svg' %}"
                                                                alt=""></a>
             </div>
             <img src="{% static '/img/company-hostory-1.png' %}" class="history" alt="">
@@ -55,7 +55,7 @@
                         <img class="cover" src="media/{{ event.preview_image }}" alt="">
                         <h3 class="title">{{ event.title_ru }}</h3>
                         <p>{{ event.description_text_ru }}</p>
-                        <a href="events/{{ event.pk }}" class="more-button">Подробнее <img
+                        <a href="events/{{ event.pk }}" class="more-button">Далее <img
                                 src="{% static 'img/more-button-arrow.svg' %}" alt=""></a>
                     </div>
                 {% endfor %}
@@ -84,7 +84,7 @@
             <div class="text">
                 <h2>{{ random_case.title_ru }}</h2>
                 <p>{{ random_case.description_text_ru }}</p>
-                <a href="{% url 'project-detail' random_case.pk %}" class="more-button">Подробнее <img
+                <a href="{% url 'project-detail' random_case.pk %}" class="more-button">Далее <img
                         src="{% static 'img/more-button-arrow.svg' %}" alt=""></a>
             </div>
         </section>

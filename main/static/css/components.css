@@ -27,9 +27,15 @@
     justify-items: center;
     cursor: pointer;
     transform: translateY(-150%);
+
     margin-bottom: -61px;
 }
-
+@media (max-width: 767px) {
+    .main-image .main-image-text a{
+         transform: translateY(-0px);
+        font-size: 14px;
+    }
+}
 .main-image .main-image-text span {
     font-style: normal;
     font-weight: 600;
@@ -301,7 +307,6 @@ a.more-button img {
     justify-items: center;
     align-items: center;
     transition: all .3s;
-    cursor: pointer;
 }
 
 .brand-item:hover .img-background {

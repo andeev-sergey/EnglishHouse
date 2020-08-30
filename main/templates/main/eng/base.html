@@ -30,6 +30,11 @@
             {% for category in categories %} {% if category.brands.all %}
                 <a href="{% url 'category_detail-eng' category.slug %}">{{ category.Title_eng }}</a>
             {% endif %} {% endfor %}
+            <form action="{% url 'search_results_eng' %}" method="get" id="search">
+                <img src="{% static 'img/serch.svg' %}" alt="" class="search">
+                <input name="q" type="text" placeholder="Search...">
+
+            </form>
 
 
         </div>

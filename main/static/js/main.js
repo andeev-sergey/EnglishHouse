@@ -1,18 +1,14 @@
-window.onload = function() {
-    // скрол со слайдера
-    $('.main-image .main-image-text').click(function() {
-        $('html, body').animate({ scrollTop: $('section').height() }, 600);
+
+
+    $(".mobile-header .menu").on('click', function() {
+       $(".hambergerIcon").toggleClass("open");
+       $('.nav-mobile').toggleClass('active');
+        // setTimeout(() => {
+        //     $('.switch_lang').toggleClass('mobile');
+        // }, 500);
+        // $('body').toggleClass('freeze');
     });
-    // меню мобильное
-    $(".menu").on('click', function() {
-        $(this).find(".hambergerIcon").toggleClass("open");
-        $('.nav-mobile').toggleClass('active');
-        setTimeout(() => {
-            $('.switch_lang').toggleClass('mobile');
-        }, 500);
-        $('body').toggleClass('freeze');
-    });
-};
+
 
     $('.switch_lang .lang').click(function () {
 
@@ -20,7 +16,7 @@ window.onload = function() {
         if (lang_id == "eng") {
             if ($(this).hasClass('active')) {
             } else {
-                window.location.href = '/' + lang_id + window.location.pathname;
+                window.location.href = '/' + lang_id + window.location.pathname + window.location.search;
             }
         } else if (lang_id == "ru") {
             if ($(this).hasClass('active')) {
@@ -41,7 +37,7 @@ function defrozen_window() {
     $('body').css('overflow-y', 'auto');
 };
 
-window.onload = function() {
+
     $('#ru-version').click(function (e) {
         e.preventDefault();
         $('#ru').trigger("click");
@@ -66,8 +62,11 @@ $('.brand-item .img-background').click(function() {
 });
 
 
-};
 
+$('nav img.search').click(function () {
+    $('#search input').addClass('search-active');
+
+});
 
 window.onload = function() {
     if (window.innerWidth >= 767) {
@@ -97,7 +96,9 @@ window.onload = function() {
                 }, 3000);
 
             }, 500);
+            $('#search').prependTo('.nav-mobile');
         } else {
+            $('#search').prependTo('.nav-mobile');
             frozen_window();
             $('.load.active').css('opacity', '0');
             setTimeout(function() {
@@ -123,7 +124,7 @@ $(document).on('click', '.next-event form button', function(e) {
             csrfmiddlewaretoken: $('input[name=csrfmiddlewaretoken]').val()
         },
         success: function(data) {
-            if (data == 'ok') {
+                if (data == 'ok') {
                 $('.next-event form *').hide();
                 if ($('.lang.active').attr('id') == 'ru'){
                 $('.next-event form').append('<span style="color: #798DA3">\t<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"\n' +
@@ -711,3 +712,7 @@ $(document).on('click', 'footer .mailing form button', function(e) {
         }
     });
 });
+
+
+
+

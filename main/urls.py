@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import *
+from main.views import *
 from django.conf import settings
 from django.conf.urls.static import static
 # from django.shortcuts import render
@@ -36,6 +36,8 @@ urlpatterns = [
     path('event-request', event_request, name='event-request'),
     path('eng/event-request', event_request, name='event-request'),
     path('sub-request', sub_request, name='sub-request'),
+    path('search/', Search.as_view(), name='search_results'),
+    path('eng/search/', EngSearch.as_view(), name='search_results_eng'),
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

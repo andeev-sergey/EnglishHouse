@@ -1,6 +1,8 @@
+from django.db.models import Q
 from django.shortcuts import render
 from .models import *
-from django.shortcuts import render, render_to_response
+from django.shortcuts import render
+
 from django.template import RequestContext
 from django.shortcuts import get_object_or_404
 from django.views.generic import ListView, View, DetailView
@@ -274,3 +276,39 @@ def sub_request(request):
 
 def handler404(request, exception):
     return render(request, 'main/404.html', locals())
+
+
+class Search(ListView):
+    model = Brand
+    template_name = 'main/search.html'
+
+    def get_queryset(self):
+        query = self.request.GET.get('q')
+        object_list = Brand.objects.filter(
+            Q(title_eng__icontains=query) | Q(title_ru__icontains=query)
+        )
+        return object_list
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["categories"] = Category.objects.all()
+        context['search'] = self.request.GET.get('q')
+        return context
+
+
+class EngSearch(ListView):
+    model = Brand
+    template_name = 'main/eng/search.html'
+
+    def get_queryset(self):
+        query = self.request.GET.get('q')
+        object_list = Brand.objects.filter(
+            Q(title_eng__icontains=query) | Q(title_ru__icontains=query)
+        )
+        return object_list
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["categories"] = Category.objects.all()
+        context['search'] = self.request.GET.get('q')
+        return context
