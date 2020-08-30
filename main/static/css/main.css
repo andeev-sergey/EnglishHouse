@@ -40,12 +40,15 @@ a {
     line-height: 160%;
     text-decoration: none;
     margin: 10px 0;
+    scroll-behavior: smooth;
+
 }
 
 body {
     color: var(--white);
     background: var(--white);
     overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
 

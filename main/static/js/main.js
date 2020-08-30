@@ -14,7 +14,6 @@ window.onload = function() {
     });
 };
 
-window.onload = function() {
     $('.switch_lang .lang').click(function () {
 
         let lang_id = this.id;
@@ -32,7 +31,8 @@ window.onload = function() {
         $(this).siblings('.lang').removeClass('active');
 
     });
-};
+
+
 function frozen_window() {
     $('body').css('overflow-y', 'hidden');
 };

@@ -21,7 +21,7 @@
     width: 100%;
 }
 
-.main-image .main-image-text {
+.main-image .main-image-text a{
     display: grid;
     justify-content: center;
     justify-items: center;
@@ -124,9 +124,9 @@ h2 {
 a.more-button {
     font-family: Montserrat;
     font-weight: 600;
-    font-size: 18px;
+    font-size: 14px;
     line-height: 160%;
-    color: var(--brown);
+    color: #111;
 }
 
 a.more-button img {
@@ -135,11 +135,9 @@ a.more-button img {
     transition: all .3s;
     margin: 0 3px;
     max-width: 114px;
+    display: none;
 }
 
-a.more-button:hover img {
-    transform: translate(5px, 7px);
-}
 
 .portfolio-item {
     width: 100%;
@@ -161,7 +159,7 @@ a.more-button:hover img {
 }
 
 .portfolio-item img.cover:hover {
-    cursor: pointer;
+
     --webkit-filter: brightness(50%);
     filter: brightness(50%);
 }
@@ -286,7 +284,7 @@ a.more-button:hover img {
     display: grid;
     width: 320px;
     grid-auto-rows: 320px auto auto;
-    justify-items: cebnter;
+    justify-items: stretch;
     align-items: start;
 }
 
@@ -306,7 +304,7 @@ a.more-button:hover img {
     cursor: pointer;
 }
 
-.brand-item .img-background:hover {
+.brand-item:hover .img-background {
     background: #dedede;
 }
 
@@ -607,9 +605,7 @@ form.mail button {
 }
 
 .switch_lang {
-    position: absolute;
-    top: 20px;
-    right: 20px;
+   display: inline;
 }
 
 .switch_lang .lang {

@@ -19,127 +19,131 @@
     <meta name="viewport" content="width=320">
 </head>
 
-<body id='shell'>
-    <div class="switch_lang">
+<header>
+    <a href="{% url 'main-eng' %}" class="logo-link"><img class="logo" src="{% static 'img/logo.png' %}" alt=""></a>
+    <nav>
+        <div class="left-links">
+            <a href="{% url 'portfolio-eng' %}">Projects</a>
+            <a href="{% url 'events-eng' %}">Events</a>
+        </div>
+        <div class="center-links">
+            {% for category in categories %} {% if category.brands.all %}
+                <a href="{% url 'category_detail-eng' category.slug %}">{{ category.Title_eng }}</a>
+            {% endif %} {% endfor %}
 
-        <span id="ru" class="lang">RU</span>
-        <span id='eng' class="lang active">ENG</span>
+
+        </div>
+        <div class="right-links">
+
+            <a href="{% url 'contacts-eng' %}">Contacts</a>
+
+            <body id='shell'>
+            <div class="switch_lang">
+
+                <span id="ru" class="lang">RU</span>
+                <span id='eng' class="lang active">ENG</span>
+            </div>
+        </div>
+    </nav>
+    <div class="mobile-header">
+        <a href="{% url 'main-eng' %}" class="mobile-logo-link"><img src="{% static 'img/logo-mobile.png' %}" alt="LOGO"
+                                                                     class="mobile-logo"></a>
+        <div class="menu">
+            <div class="hambergerIcon"></div>
+        </div>
     </div>
-    <header>
-        <a href="{% url 'main-eng' %}" class="logo-link"><img class="logo" src="{% static 'img/logo.png' %}" alt=""></a>
-        <nav>
-            <div class="left-links">
-                <a href="{% url 'portfolio-eng' %}">Projects</a>
-                <a href="{% url 'events-eng' %}">Events</a>
-            </div>
-            <div class="center-links">
-                {% for category in categories %} {% if category.brands.all %}
-                <a href="{% url 'category_detail-eng' category.slug %}">{{ category.Title_eng }}</a> {% endif %} {% endfor %}
-
-
-            </div>
-            <div class="right-links">
-                <a href="{% url 'aboutus-eng' %}">About us</a>
-                <a href="{% url 'contacts-eng' %}">Contacts</a>
-            </div>
-        </nav>
-        <div class="mobile-header">
-            <a href="{% url 'main-eng' %}" class="mobile-logo-link"><img src="{% static 'img/logo-mobile.png' %}" alt="LOGO" class="mobile-logo"></a>
-            <div class="menu">
-                <div class="hambergerIcon"></div>
-            </div>
-        </div>
-        <div class="nav-mobile">
-            <h3>Assortment</h3>
-            <ul>
-                {% for category in categories %} {% if category.brands.all %}
+    <div class="nav-mobile">
+        <h3>Assortment</h3>
+        <ul>
+            {% for category in categories %} {% if category.brands.all %}
                 <a href="{% url 'category_detail-eng' category.slug %}">
                     <li>{{ category.Title_eng }}</li>
                 </a>
-                {% endif %} {% endfor %}
-            </ul>
-            <h3>English House</h3>
-            <ul>
-                <a href="{% url 'portfolio-eng' %}">
-                    <li>Projects</li>
-                </a>
-                <a href="{% url 'events-eng' %}">
-                    <li>Events</li>
-                </a>
-                <a href="{% url 'contacts-eng' %}">
-                    <li>Contacts</li>
-                </a>
-                <a href="{% url 'aboutus-eng' %}">
-                    <li>About us</li>
-                </a>
-            </ul>
-            <ul>
-                <a id="ru-version" href="#">
-                    <li>Русская версия</li>
-                </a>
-            </ul>
-        </div>
-    </header>
+            {% endif %} {% endfor %}
+        </ul>
+        <h3>English House</h3>
+        <ul>
+            <a href="{% url 'portfolio-eng' %}">
+                <li>Projects</li>
+            </a>
+            <a href="{% url 'events-eng' %}">
+                <li>Events</li>
+            </a>
+            <a href="{% url 'contacts-eng' %}">
+                <li>Contacts</li>
+            </a>
+            <a href="{% url 'aboutus-eng' %}">
+                <li>About us</li>
+            </a>
+        </ul>
+        <ul>
+            <a id="ru-version" href="#">
+                <li>Русская версия</li>
+            </a>
+        </ul>
+    </div>
+</header>
 
-    {% block content %} {% endblock %}
+{% block content %} {% endblock %}
 
-    <a class="call-mobile" href="tel:+7999999999"><img src="{% static 'img/call.svg' %}" alt=""></a>
+<a class="call-mobile" href="tel:+7999999999"><img src="{% static 'img/call.svg' %}" alt=""></a>
 
 
-    <footer>
-        <div class="column">
-            <h3>About company</h3>
-            <ul>
-                <a href="{% url 'aboutus-eng' %}">
-                    <li>About us</li>
-                </a>
-                <a href="{% url 'contacts-eng' %}">
-                    <li>Contacts</li>
-                </a>
-                <a href="{% url 'events-eng' %}">
-                    <li>Events</li>
-                </a>
-            </ul>
-        </div>
-        <div class="column">
-            <h3>Assortment</h3>
-            <ul>
-                {% for category in categories %} {% if category.brands.all %}
+<footer>
+    <div class="column">
+        <h3>About company</h3>
+        <ul>
+            <a href="{% url 'aboutus-eng' %}">
+                <li>About us</li>
+            </a>
+            <a href="{% url 'contacts-eng' %}">
+                <li>Contacts</li>
+            </a>
+            <a href="{% url 'events-eng' %}">
+                <li>Events</li>
+            </a>
+        </ul>
+    </div>
+    <div class="column">
+        <h3>Assortment</h3>
+        <ul>
+            {% for category in categories %} {% if category.brands.all %}
                 <a href="{% url 'category_detail-eng' category.slug %}">
                     <li>{{ category.Title_eng }}</li>
                 </a>
-                {% endif %} {% endfor %}
-            </ul>
+            {% endif %} {% endfor %}
+        </ul>
 
-        </div>
-        <div class="column">
-            <h3>Projects</h3>
-            <ul>
-                {% for q in projects %}
+    </div>
+    <div class="column">
+        <h3>Projects</h3>
+        <ul>
+            {% for q in projects %}
                 <a href="{% url 'project-detail-eng' q.pk %}">
                     <li>{{ q.title_eng }}</li>
                 </a>
-                {% endfor %}
-            </ul>
+            {% endfor %}
+        </ul>
 
-        </div>
+    </div>
 
-        <div class="mailing">
-            <h3>Subscribe to our newsletter</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus platea scelerisque bibendum integer nisi, quis sollicitudin feugiat. </p>
-            <form class="mail">
-                  {% csrf_token %}
-                <input type="email" id="email-sub" name="email">
-                <button>Subscribe</button>
-            </form>
-        </div>
+    <div class="mailing">
+        <h3>Subscribe to our newsletter</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus platea scelerisque bibendum integer nisi,
+            quis sollicitudin feugiat. </p>
+        <form class="mail">
+            {% csrf_token %}
+            <input type="email" id="email-sub" name="email">
+            <button>Subscribe</button>
+        </form>
+    </div>
 
-    </footer>
+</footer>
 
-    <div class="load active"></div>
-    <script src="{% static 'js/jq.js' %}" charset="utf-8"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js" charset="utf-8"></script>
-    <script src="{% static 'js/main.js' %}" charset="utf-8"></script>
+<div class="load active"></div>
+<script src="{% static 'js/jq.js' %}" charset="utf-8"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js" charset="utf-8"></script>
+<script src="{% static 'js/main.js' %}" charset="utf-8"></script>
 </body>
 
 </html>
