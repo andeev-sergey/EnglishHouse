@@ -30,10 +30,10 @@
             {% for category in categories %} {% if category.brands.all %}
                 <a href="{% url 'category_detail-eng' category.slug %}">{{ category.Title_eng }}</a>
             {% endif %} {% endfor %}
-            <form action="{% url 'search_results_eng' %}" method="get" id="search">
-                <img src="{% static 'img/serch.svg' %}" alt="" class="search">
-                <input name="q" type="text" placeholder="Search...">
+            <form action="{% url 'search_results' %}" method="get" id="search">
 
+                <input name="q" type="text" placeholder="Search...">
+                <img src="{% static 'img/serch.svg' %}" alt="" class="search">
             </form>
 
 
@@ -51,8 +51,9 @@
         </div>
     </nav>
     <div class="mobile-header">
-        <a href="{% url 'main-eng' %}" class="mobile-logo-link"><img src="{% static 'img/logo-mobile.png' %}" alt="LOGO"
-                                                                     class="mobile-logo"></a>
+        <a href="{% url 'main' %}" class="mobile-logo-link">
+            <img src="{% static 'img/logo-mobile.png' %}" alt="LOGO" class="mobile-logo">
+        </a>
         <div class="menu">
             <div class="hambergerIcon"></div>
         </div>

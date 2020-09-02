@@ -33,6 +33,8 @@ class Category(models.Model):
     Title_eng = models.CharField("Назвние категории eng", max_length=50)
     brands = models.ManyToManyField(Brand,blank=True)
     slug = models.SlugField(null=True)
+    description_text_ru = models.TextField('Описание на ru')
+    description_text_eng = models.TextField('Описание на eng')
     def get_absolute_url(self):
         return reverse('category_detail', kwargs={'slug': self.slug})
     class Meta:
