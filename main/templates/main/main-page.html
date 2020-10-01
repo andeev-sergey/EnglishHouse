@@ -71,13 +71,13 @@
                         <img src="{{ brand.preview_image.url }}" alt="" class="cover">
                     </div>
                     <h3 class="title">{{ brand.title_ru }}</h3>
-                    <a style="display: none;" href="{% url 'brand-list' brand.slug %}">Посмотреть всю коллекцию</a>
+                    <a style="display: none;" href="{% url 'brand-list' brand.slug %}">Посмотреть</a>
                 </div>
             {% endfor %}
         </section>
     {% endif %}
         <div class="section-part">
-            <h1 class="caption">Проект</h1>
+            <h1 class="caption">Проекты</h1>
         </div>
         <section class="brand-block">
             <img src="{{ random_case.detail_image_1.url }}" alt="">

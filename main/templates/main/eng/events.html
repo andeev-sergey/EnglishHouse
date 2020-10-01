@@ -12,12 +12,7 @@
             {% for event in events %} {% if event.in_head %}
             <h1 class="caption">{{ event.title_eng }}</h1>
             <p>{{ event.description_text_eng }}</p>
-            <h4>Date & time <span class="date-time"></span>{{ event.date_time|date:"Y-m-d H:i:s" }}</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus platea scelerisque bibendum integer nisi, quis sollicitudin feugiat. </p>
-            <form class="mail"> {% csrf_token %}
-                <input type="email" id="email" name="email">
-                <button>Subscribe</button>
-            </form>
+
             {% endif %} {% endfor %}
         </div>
         <img src="{% static '/img/company-hostory-1.png' %}" class="history" alt="">

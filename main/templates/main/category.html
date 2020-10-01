@@ -29,8 +29,8 @@
             <div class="img-background">
                 <img src="{{ brand.preview_image.url }}" alt="" class="cover">
             </div>
-            <h3 class="title">Продукция бренда {{ brand.title_ru }}</h3>
-            <a href="{% url 'brand-category-list' category.slug  brand.slug %}">Посмотреть всю коллекцию</a>
+            <h3 class="title">{{ brand.title_ru }}</h3>
+            <a href="{% url 'brand-category-list' category.slug  brand.slug %}">Посмотреть</a>
         </div>
 
         {% endfor %}

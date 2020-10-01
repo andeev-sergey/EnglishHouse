@@ -97,7 +97,6 @@
 
 <footer>
     <div class="column">
-        <h3>О компании</h3>
         <ul>
             <a href="{% url 'aboutus' %}">
                 <li>О нас</li>
@@ -111,7 +110,7 @@
         </ul>
     </div>
     <div class="column">
-        <h3>Наш ассортимент</h3>
+
         <ul>
             {% for category in categories %} {% if category.brands.all %}
                 <a href="{% url 'category_detail' category.slug %}">
@@ -134,14 +133,10 @@
     </div>
 
     <div class="mailing">
-        <h3>Подпишитесь на новостную рассылку</h3>
+
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus platea scelerisque bibendum integer nisi,
             quis sollicitudin feugiat. </p>
-        <form class="mail">
-            {% csrf_token %}
-            <input type="email" id="email-sub" name="email">
-            <button>Подписаться</button>
-        </form>
+
     </div>
 
 </footer>

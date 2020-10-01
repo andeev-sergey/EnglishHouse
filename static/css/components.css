@@ -21,15 +21,21 @@
     width: 100%;
 }
 
-.main-image .main-image-text {
+.main-image .main-image-text a{
     display: grid;
     justify-content: center;
     justify-items: center;
     cursor: pointer;
     transform: translateY(-150%);
+
     margin-bottom: -61px;
 }
-
+@media (max-width: 767px) {
+    .main-image .main-image-text a{
+         transform: translateY(-0px);
+        font-size: 14px;
+    }
+}
 .main-image .main-image-text span {
     font-style: normal;
     font-weight: 600;
@@ -124,9 +130,9 @@ h2 {
 a.more-button {
     font-family: Montserrat;
     font-weight: 600;
-    font-size: 18px;
+    font-size: 14px;
     line-height: 160%;
-    color: var(--brown);
+    color: #111;
 }
 
 a.more-button img {
@@ -135,11 +141,9 @@ a.more-button img {
     transition: all .3s;
     margin: 0 3px;
     max-width: 114px;
+    display: none;
 }
 
-a.more-button:hover img {
-    transform: translate(5px, 7px);
-}
 
 .portfolio-item {
     width: 100%;
@@ -161,7 +165,7 @@ a.more-button:hover img {
 }
 
 .portfolio-item img.cover:hover {
-    cursor: pointer;
+
     --webkit-filter: brightness(50%);
     filter: brightness(50%);
 }
@@ -286,7 +290,7 @@ a.more-button:hover img {
     display: grid;
     width: 320px;
     grid-auto-rows: 320px auto auto;
-    justify-items: cebnter;
+    justify-items: stretch;
     align-items: start;
 }
 
@@ -303,10 +307,9 @@ a.more-button:hover img {
     justify-items: center;
     align-items: center;
     transition: all .3s;
-    cursor: pointer;
 }
 
-.brand-item .img-background:hover {
+.brand-item:hover .img-background {
     background: #dedede;
 }
 
@@ -397,6 +400,13 @@ a.more-button:hover img {
 
 .info-block {
     width: 500px;
+    box-sizing: border-box;
+}
+
+@media (max-width: 767px) {
+    .info-block {
+        width: 100%;
+    }
 }
 
 .info-block.left {
@@ -435,11 +445,46 @@ a.more-button:hover img {
     margin: 3px;
 }
 
+@media (max-width: 767px) {
+    .info-block.left {
+        padding-left: 20px;
+        border-left: solid 2px #CAB59A;
+        justify-self: start;
+    }
+    .info-block.right {
+        padding-right: 20px;
+        border-right: solid 2px #CAB59A;
+        justify-self: end;
+    }
+    .info-block .table span {
+        font-size: 13px;
+    }
+    .info-block.right p {
+        font-size: 10px;
+        padding-bottom: 10px;
+    }
+    .info-block h3.title {
+        font-family: Playfair Display;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 20px;
+        margin-top: 0px;
+        margin-bottom: 30px;
+    }
+}
+
 .section-part {
     margin-top: 40px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
+}
+
+.section-part a {
+    max-width: 200px;
+    justify-self: end;
+    align-self: start;
 }
 
 @media (max-width: 767px) {
@@ -449,6 +494,12 @@ a.more-button:hover img {
         grid-template-columns: 1fr;
         align-items: center;
         justify-items: start;
+    }
+    .section-part a {
+        max-width: 100px;
+        justify-self: start;
+        align-self: end;
+        margin-top: 30px;
     }
 }
 
@@ -559,9 +610,7 @@ form.mail button {
 }
 
 .switch_lang {
-    position: absolute;
-    top: 20px;
-    right: 20px;
+   display: inline;
 }
 
 .switch_lang .lang {
@@ -576,4 +625,59 @@ form.mail button {
 .switch_lang .lang.active {
     color: #111;
     font-size: 14px;
+}
+
+@media (max-width: 767px) {
+    .switch_lang {
+        display: none;
+    }
+}
+
+.mobilepre {
+    display: none;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: -100vw;
+    background: #000;
+    z-index: 1000000000;
+    transition: ease-out 1s;
+}
+
+@media (max-width: 767px) {
+    .mobilepre {
+        display: grid;
+    }
+}
+
+.mobilepre img {
+    max-width: 50vw;
+    align-self: center;
+    justify-self: center;
+    opacity: 0;
+    transition: ease-out 1s;
+    transform: translateY(50px);
+}
+
+a.call-mobile img {
+    width: 30px;
+    background: #fff;
+    border-radius: 50%;
+    transition: ease-in .5s;
+    transform: rotate(180deg);
+}
+
+a.call-mobile {
+    display: none;
+    position: fixed;
+    right: 20px;
+    bottom: 10px;
+    z-index: 100;
+}
+
+@media (max-width: 767px) {
+    a.call-mobile {
+        display: block;
+    }
 }
