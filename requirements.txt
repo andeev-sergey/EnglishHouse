@@ -13,7 +13,7 @@ MarkupPy==1.14
 multidict==4.7.6
 odfpy==1.4.1
 openpyxl==3.0.3
-Pillow==7.1.2
+Pillow==8.1.1
 pkg-resources==0.0.0
 pytz==2020.1
 PyYAML==5.3.1
